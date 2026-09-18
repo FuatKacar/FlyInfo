@@ -1,0 +1,93 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  kalite:
+    name: Kod kalitesi
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked
+      - name: Ruff (lint)
+        run: uv run ruff check
+      - name: Ruff (biçimlendirme)
+        run: uv run ruff format --check
+      - name: mypy
+        run: uv run mypy
+      - name: .env.example sızıntı denetimi
+        run: uv run python scripts/check_env_example.py
+
+  arayuz:
+    name: Arayüz (tipler, testler, uçtan uca)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: uv sync --locked
+      - run: npm ci
+      - name: API şeması ve üretilen tipler güncel mi
+        run: |
+          uv run python ../scripts/openapi_aktar.py --denetle
+          npm run api-tipleri
+          git diff --exit-code -- src/api/sema.d.ts
+      - name: Biome (lint ve biçim)
+        run: npx biome ci .
+      - name: TypeScript
+        run: npx tsc --noEmit
+      - name: Vitest
+        run: npm test
+      - name: Playwright tarayıcısı
+        run: npx playwright install --with-deps chromium
+      - name: Uçtan uca testler
+        run: npm run e2e
+      - name: Depodaki derlenmiş arayüz güncel mi
+        run: |
+          npm run build
+          git diff --exit-code -- ../backend/sinek/web
+
+  test:
+    name: Testler (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked
+      - run: uv run pytest -m "not veri" --cov=sinek --cov-report=term-missing
+
+  veri:
+    name: Gerçek veri entegrasyonu (FlyWire v783)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked
+      - name: Ham veri önbelleği
+        uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: flywire-raw-${{ hashFiles('backend/sinek/connectome/sources.py') }}
+      - name: İndir ve doğrula
+        run: uv run sinek indir
+      - name: Entegrasyon testleri
+        run: uv run pytest -m veri

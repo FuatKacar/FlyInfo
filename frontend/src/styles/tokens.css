@@ -1,0 +1,95 @@
+/* Renk jetonları. Veri görselleştirme paleti: tek ton (mavi) sıralı rampa; durum renkleri ayrı. */
+:root {
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface-1: #fcfcfb;
+  --surface-2: #f2f1ed;
+  --surface-3: #e8e7e1;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #6e6d68;
+  --line: #e1e0d9;
+  --line-strong: #c3c2b7;
+  --accent: #2a78d6;
+  --accent-strong: #1c5cab;
+  --accent-soft: #cde2fb;
+  --on-accent: #ffffff;
+  --user-bubble: #1c5cab;
+  --on-user-bubble: #ffffff;
+  --glow: #1c5cab;
+  --glow-3d: #1f6fd0;
+  --brain-fill: #f2f1ed;
+  --region-fill: #ebeae4;
+  --brain-stroke: #b5b4ab;
+  --neuropil-stroke: #c9c8c0;
+  --readout: #eb6834;
+  --good: #0a7d0a;
+  --critical: #d03b3b;
+  --focus: #2a78d6;
+  --shadow: 0 1px 2px rgb(0 0 0 / 6%), 0 4px 16px rgb(0 0 0 / 5%);
+  --radius: 12px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface-1: #1a1a19;
+    --surface-2: #232322;
+    --surface-3: #2c2c2a;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted: #9a9991;
+    --line: #2c2c2a;
+    --line-strong: #383835;
+    --accent: #3987e5;
+    --accent-strong: #6da7ec;
+    --accent-soft: #184f95;
+    --on-accent: #ffffff;
+    --user-bubble: #256abf;
+    --on-user-bubble: #ffffff;
+    --glow: #9ec5f4;
+    --glow-3d: #3d8ff0;
+    --brain-fill: #141413;
+    --region-fill: #1d1d1b;
+    --brain-stroke: #45453f;
+    --neuropil-stroke: #34342f;
+    --readout: #d95926;
+    --good: #0ca30c;
+    --critical: #e05555;
+    --focus: #6da7ec;
+    --shadow: 0 1px 2px rgb(0 0 0 / 40%), 0 4px 16px rgb(0 0 0 / 30%);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d;
+  --surface-1: #1a1a19;
+  --surface-2: #232322;
+  --surface-3: #2c2c2a;
+  --text-primary: #ffffff;
+  --text-secondary: #c3c2b7;
+  --text-muted: #9a9991;
+  --line: #2c2c2a;
+  --line-strong: #383835;
+  --accent: #3987e5;
+  --accent-strong: #6da7ec;
+  --accent-soft: #184f95;
+  --on-accent: #ffffff;
+  --user-bubble: #256abf;
+  --on-user-bubble: #ffffff;
+  --glow: #9ec5f4;
+  --glow-3d: #3d8ff0;
+  --brain-fill: #141413;
+  --region-fill: #1d1d1b;
+  --brain-stroke: #45453f;
+  --neuropil-stroke: #34342f;
+  --readout: #d95926;
+  --good: #0ca30c;
+  --critical: #e05555;
+  --focus: #6da7ec;
+  --shadow: 0 1px 2px rgb(0 0 0 / 40%), 0 4px 16px rgb(0 0 0 / 30%);
+}

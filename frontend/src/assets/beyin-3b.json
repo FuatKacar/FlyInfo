@@ -1,0 +1,773 @@
+{
+  "schema_version": 1,
+  "units": "µm",
+  "binary": "beyin-3b.bin",
+  "binary_sha256": "f16efac472aef8b8374d4b2b6375e2b54b771f04804f7990c79b1bdaf5b98b0f",
+  "scale": 0.012323582272179327,
+  "radius_um": 403.8,
+  "size_um": [807.6, 382.2, 274.3],
+  "vertex_bytes": 357108,
+  "index_byte_offset": 357108,
+  "parts": [
+    {
+      "name": "__beyin__",
+      "vertex_offset": 0,
+      "vertex_count": 8997,
+      "index_offset": 0,
+      "index_count": 54000,
+      "depth_um": -144.0
+    },
+    {
+      "name": "AL_L",
+      "vertex_offset": 8997,
+      "vertex_count": 622,
+      "index_offset": 54000,
+      "index_count": 3720,
+      "depth_um": -58.9
+    },
+    {
+      "name": "AL_R",
+      "vertex_offset": 9619,
+      "vertex_count": 612,
+      "index_offset": 57720,
+      "index_count": 3684,
+      "depth_um": -45.2
+    },
+    {
+      "name": "AME_L",
+      "vertex_offset": 10231,
+      "vertex_count": 72,
+      "index_offset": 61404,
+      "index_count": 420,
+      "depth_um": -153.7
+    },
+    {
+      "name": "AME_R",
+      "vertex_offset": 10303,
+      "vertex_count": 67,
+      "index_offset": 61824,
+      "index_count": 390,
+      "depth_um": -121.2
+    },
+    {
+      "name": "AMMC_L",
+      "vertex_offset": 10370,
+      "vertex_count": 341,
+      "index_offset": 62214,
+      "index_count": 2052,
+      "depth_um": -122.3
+    },
+    {
+      "name": "AMMC_R",
+      "vertex_offset": 10711,
+      "vertex_count": 341,
+      "index_offset": 64266,
+      "index_count": 2034,
+      "depth_um": -106.7
+    },
+    {
+      "name": "AOTU_L",
+      "vertex_offset": 11052,
+      "vertex_count": 225,
+      "index_offset": 66300,
+      "index_count": 1338,
+      "depth_um": -95.7
+    },
+    {
+      "name": "AOTU_R",
+      "vertex_offset": 11277,
+      "vertex_count": 225,
+      "index_offset": 67638,
+      "index_count": 1338,
+      "depth_um": -64.3
+    },
+    {
+      "name": "ATL_L",
+      "vertex_offset": 11502,
+      "vertex_count": 183,
+      "index_offset": 68976,
+      "index_count": 1086,
+      "depth_um": -158.4
+    },
+    {
+      "name": "ATL_R",
+      "vertex_offset": 11685,
+      "vertex_count": 148,
+      "index_offset": 70062,
+      "index_count": 876,
+      "depth_um": -152.0
+    },
+    {
+      "name": "AVLP_L",
+      "vertex_offset": 11833,
+      "vertex_count": 719,
+      "index_offset": 70938,
+      "index_count": 4290,
+      "depth_um": -124.1
+    },
+    {
+      "name": "AVLP_R",
+      "vertex_offset": 12552,
+      "vertex_count": 778,
+      "index_offset": 75228,
+      "index_count": 4656,
+      "depth_um": -98.3
+    },
+    {
+      "name": "BU_L",
+      "vertex_offset": 13330,
+      "vertex_count": 46,
+      "index_offset": 79884,
+      "index_count": 264,
+      "depth_um": -112.2
+    },
+    {
+      "name": "BU_R",
+      "vertex_offset": 13376,
+      "vertex_count": 57,
+      "index_offset": 80148,
+      "index_count": 330,
+      "depth_um": -95.3
+    },
+    {
+      "name": "CAN_L",
+      "vertex_offset": 13433,
+      "vertex_count": 53,
+      "index_offset": 80478,
+      "index_count": 306,
+      "depth_um": -139.6
+    },
+    {
+      "name": "CAN_R",
+      "vertex_offset": 13486,
+      "vertex_count": 82,
+      "index_offset": 80784,
+      "index_count": 480,
+      "depth_um": -142.9
+    },
+    {
+      "name": "CRE_L",
+      "vertex_offset": 13568,
+      "vertex_count": 574,
+      "index_offset": 81264,
+      "index_count": 3444,
+      "depth_um": -70.9
+    },
+    {
+      "name": "CRE_R",
+      "vertex_offset": 14142,
+      "vertex_count": 550,
+      "index_offset": 84708,
+      "index_count": 3300,
+      "depth_um": -61.4
+    },
+    {
+      "name": "EB",
+      "vertex_offset": 14692,
+      "vertex_count": 252,
+      "index_offset": 88008,
+      "index_count": 1518,
+      "depth_um": -90.0
+    },
+    {
+      "name": "EPA_L",
+      "vertex_offset": 14944,
+      "vertex_count": 121,
+      "index_offset": 89526,
+      "index_count": 714,
+      "depth_um": -130.1
+    },
+    {
+      "name": "EPA_R",
+      "vertex_offset": 15065,
+      "vertex_count": 115,
+      "index_offset": 90240,
+      "index_count": 678,
+      "depth_um": -119.1
+    },
+    {
+      "name": "FB",
+      "vertex_offset": 15180,
+      "vertex_count": 614,
+      "index_offset": 90918,
+      "index_count": 3672,
+      "depth_um": -117.8
+    },
+    {
+      "name": "FLA_L",
+      "vertex_offset": 15794,
+      "vertex_count": 202,
+      "index_offset": 94590,
+      "index_count": 1206,
+      "depth_um": -95.9
+    },
+    {
+      "name": "FLA_R",
+      "vertex_offset": 15996,
+      "vertex_count": 204,
+      "index_offset": 95796,
+      "index_count": 1212,
+      "depth_um": -92.7
+    },
+    {
+      "name": "GA_L",
+      "vertex_offset": 16200,
+      "vertex_count": 53,
+      "index_offset": 97008,
+      "index_count": 306,
+      "depth_um": -85.0
+    },
+    {
+      "name": "GA_R",
+      "vertex_offset": 16253,
+      "vertex_count": 65,
+      "index_offset": 97314,
+      "index_count": 378,
+      "depth_um": -69.2
+    },
+    {
+      "name": "GNG",
+      "vertex_offset": 16318,
+      "vertex_count": 1737,
+      "index_offset": 97692,
+      "index_count": 10410,
+      "depth_um": -151.3
+    },
+    {
+      "name": "GOR_L",
+      "vertex_offset": 18055,
+      "vertex_count": 180,
+      "index_offset": 108102,
+      "index_count": 1068,
+      "depth_um": -139.2
+    },
+    {
+      "name": "GOR_R",
+      "vertex_offset": 18235,
+      "vertex_count": 170,
+      "index_offset": 109170,
+      "index_count": 1008,
+      "depth_um": -128.9
+    },
+    {
+      "name": "IB_L",
+      "vertex_offset": 18405,
+      "vertex_count": 291,
+      "index_offset": 110178,
+      "index_count": 1740,
+      "depth_um": -161.9
+    },
+    {
+      "name": "IB_R",
+      "vertex_offset": 18696,
+      "vertex_count": 268,
+      "index_offset": 111918,
+      "index_count": 1596,
+      "depth_um": -157.4
+    },
+    {
+      "name": "ICL_L",
+      "vertex_offset": 18964,
+      "vertex_count": 400,
+      "index_offset": 113514,
+      "index_count": 2388,
+      "depth_um": -150.3
+    },
+    {
+      "name": "ICL_R",
+      "vertex_offset": 19364,
+      "vertex_count": 428,
+      "index_offset": 115902,
+      "index_count": 2556,
+      "depth_um": -133.5
+    },
+    {
+      "name": "IPS_L",
+      "vertex_offset": 19792,
+      "vertex_count": 630,
+      "index_offset": 118458,
+      "index_count": 3768,
+      "depth_um": -180.1
+    },
+    {
+      "name": "IPS_R",
+      "vertex_offset": 20422,
+      "vertex_count": 501,
+      "index_offset": 122226,
+      "index_count": 2994,
+      "depth_um": -176.7
+    },
+    {
+      "name": "LAL_L",
+      "vertex_offset": 20923,
+      "vertex_count": 388,
+      "index_offset": 125220,
+      "index_count": 2316,
+      "depth_um": -101.2
+    },
+    {
+      "name": "LAL_R",
+      "vertex_offset": 21311,
+      "vertex_count": 402,
+      "index_offset": 127536,
+      "index_count": 2400,
+      "depth_um": -86.6
+    },
+    {
+      "name": "LA_L",
+      "vertex_offset": 21713,
+      "vertex_count": 1432,
+      "index_offset": 129936,
+      "index_count": 8580,
+      "depth_um": -157.4
+    },
+    {
+      "name": "LA_R",
+      "vertex_offset": 23145,
+      "vertex_count": 1178,
+      "index_offset": 138516,
+      "index_count": 7056,
+      "depth_um": -122.0
+    },
+    {
+      "name": "LH_L",
+      "vertex_offset": 24323,
+      "vertex_count": 380,
+      "index_offset": 145572,
+      "index_count": 2268,
+      "depth_um": -170.8
+    },
+    {
+      "name": "LH_R",
+      "vertex_offset": 24703,
+      "vertex_count": 334,
+      "index_offset": 147840,
+      "index_count": 1992,
+      "depth_um": -141.7
+    },
+    {
+      "name": "LOP_L",
+      "vertex_offset": 25037,
+      "vertex_count": 1741,
+      "index_offset": 149832,
+      "index_count": 10446,
+      "depth_um": -245.0
+    },
+    {
+      "name": "LOP_R",
+      "vertex_offset": 26778,
+      "vertex_count": 1893,
+      "index_offset": 160278,
+      "index_count": 11358,
+      "depth_um": -210.7
+    },
+    {
+      "name": "LO_L",
+      "vertex_offset": 28671,
+      "vertex_count": 2221,
+      "index_offset": 171636,
+      "index_count": 13386,
+      "depth_um": -210.4
+    },
+    {
+      "name": "LO_R",
+      "vertex_offset": 30892,
+      "vertex_count": 2303,
+      "index_offset": 185022,
+      "index_count": 13860,
+      "depth_um": -178.8
+    },
+    {
+      "name": "MB_CA_L",
+      "vertex_offset": 33195,
+      "vertex_count": 325,
+      "index_offset": 198882,
+      "index_count": 1932,
+      "depth_um": -190.5
+    },
+    {
+      "name": "MB_CA_R",
+      "vertex_offset": 33520,
+      "vertex_count": 327,
+      "index_offset": 200814,
+      "index_count": 1950,
+      "depth_um": -173.6
+    },
+    {
+      "name": "MB_ML_L",
+      "vertex_offset": 33847,
+      "vertex_count": 385,
+      "index_offset": 202764,
+      "index_count": 2286,
+      "depth_um": -62.2
+    },
+    {
+      "name": "MB_ML_R",
+      "vertex_offset": 34232,
+      "vertex_count": 339,
+      "index_offset": 205050,
+      "index_count": 2022,
+      "depth_um": -52.7
+    },
+    {
+      "name": "MB_PED_L",
+      "vertex_offset": 34571,
+      "vertex_count": 247,
+      "index_offset": 207072,
+      "index_count": 1470,
+      "depth_um": -114.3
+    },
+    {
+      "name": "MB_PED_R",
+      "vertex_offset": 34818,
+      "vertex_count": 250,
+      "index_offset": 208542,
+      "index_count": 1488,
+      "depth_um": -99.2
+    },
+    {
+      "name": "MB_VL_L",
+      "vertex_offset": 35068,
+      "vertex_count": 237,
+      "index_offset": 210030,
+      "index_count": 1410,
+      "depth_um": -83.6
+    },
+    {
+      "name": "MB_VL_R",
+      "vertex_offset": 35305,
+      "vertex_count": 243,
+      "index_offset": 211440,
+      "index_count": 1446,
+      "depth_um": -65.1
+    },
+    {
+      "name": "ME_L",
+      "vertex_offset": 35548,
+      "vertex_count": 5253,
+      "index_offset": 212886,
+      "index_count": 31572,
+      "depth_um": -200.4
+    },
+    {
+      "name": "ME_R",
+      "vertex_offset": 40801,
+      "vertex_count": 5445,
+      "index_offset": 244458,
+      "index_count": 32718,
+      "depth_um": -166.6
+    },
+    {
+      "name": "NO",
+      "vertex_offset": 46246,
+      "vertex_count": 101,
+      "index_offset": 277176,
+      "index_count": 594,
+      "depth_um": -109.4
+    },
+    {
+      "name": "OCG",
+      "vertex_offset": 46347,
+      "vertex_count": 1497,
+      "index_offset": 277770,
+      "index_count": 8994,
+      "depth_um": -144.2
+    },
+    {
+      "name": "PB",
+      "vertex_offset": 47844,
+      "vertex_count": 298,
+      "index_offset": 286764,
+      "index_count": 1776,
+      "depth_um": -171.1
+    },
+    {
+      "name": "PLP_L",
+      "vertex_offset": 48142,
+      "vertex_count": 678,
+      "index_offset": 288540,
+      "index_count": 4056,
+      "depth_um": -179.5
+    },
+    {
+      "name": "PLP_R",
+      "vertex_offset": 48820,
+      "vertex_count": 598,
+      "index_offset": 292596,
+      "index_count": 3576,
+      "depth_um": -163.8
+    },
+    {
+      "name": "PRW",
+      "vertex_offset": 49418,
+      "vertex_count": 331,
+      "index_offset": 296172,
+      "index_count": 1974,
+      "depth_um": -76.9
+    },
+    {
+      "name": "PVLP_L",
+      "vertex_offset": 49749,
+      "vertex_count": 777,
+      "index_offset": 298146,
+      "index_count": 4662,
+      "depth_um": -145.0
+    },
+    {
+      "name": "PVLP_R",
+      "vertex_offset": 50526,
+      "vertex_count": 606,
+      "index_offset": 302808,
+      "index_count": 3624,
+      "depth_um": -122.6
+    },
+    {
+      "name": "SAD",
+      "vertex_offset": 51132,
+      "vertex_count": 1379,
+      "index_offset": 306432,
+      "index_count": 8364,
+      "depth_um": -128.9
+    },
+    {
+      "name": "SCL_L",
+      "vertex_offset": 52511,
+      "vertex_count": 424,
+      "index_offset": 314796,
+      "index_count": 2532,
+      "depth_um": -147.0
+    },
+    {
+      "name": "SCL_R",
+      "vertex_offset": 52935,
+      "vertex_count": 400,
+      "index_offset": 317328,
+      "index_count": 2388,
+      "depth_um": -131.4
+    },
+    {
+      "name": "SIP_L",
+      "vertex_offset": 53335,
+      "vertex_count": 395,
+      "index_offset": 319716,
+      "index_count": 2358,
+      "depth_um": -106.5
+    },
+    {
+      "name": "SIP_R",
+      "vertex_offset": 53730,
+      "vertex_count": 375,
+      "index_offset": 322074,
+      "index_count": 2238,
+      "depth_um": -90.4
+    },
+    {
+      "name": "SLP_L",
+      "vertex_offset": 54105,
+      "vertex_count": 582,
+      "index_offset": 324312,
+      "index_count": 3480,
+      "depth_um": -135.6
+    },
+    {
+      "name": "SLP_R",
+      "vertex_offset": 54687,
+      "vertex_count": 573,
+      "index_offset": 327792,
+      "index_count": 3426,
+      "depth_um": -112.7
+    },
+    {
+      "name": "SMP_L",
+      "vertex_offset": 55260,
+      "vertex_count": 698,
+      "index_offset": 331218,
+      "index_count": 4176,
+      "depth_um": -104.4
+    },
+    {
+      "name": "SMP_R",
+      "vertex_offset": 55958,
+      "vertex_count": 664,
+      "index_offset": 335394,
+      "index_count": 3972,
+      "depth_um": -98.1
+    },
+    {
+      "name": "SPS_L",
+      "vertex_offset": 56622,
+      "vertex_count": 584,
+      "index_offset": 339366,
+      "index_count": 3492,
+      "depth_um": -171.8
+    },
+    {
+      "name": "SPS_R",
+      "vertex_offset": 57206,
+      "vertex_count": 629,
+      "index_offset": 342858,
+      "index_count": 3762,
+      "depth_um": -161.7
+    },
+    {
+      "name": "VES_L",
+      "vertex_offset": 57835,
+      "vertex_count": 404,
+      "index_offset": 346620,
+      "index_count": 2418,
+      "depth_um": -120.2
+    },
+    {
+      "name": "VES_R",
+      "vertex_offset": 58239,
+      "vertex_count": 413,
+      "index_offset": 349038,
+      "index_count": 2466,
+      "depth_um": -109.3
+    },
+    {
+      "name": "WED_L",
+      "vertex_offset": 58652,
+      "vertex_count": 457,
+      "index_offset": 351504,
+      "index_count": 2730,
+      "depth_um": -138.1
+    },
+    {
+      "name": "WED_R",
+      "vertex_offset": 59109,
+      "vertex_count": 409,
+      "index_offset": 354234,
+      "index_count": 2442,
+      "depth_um": -132.3
+    }
+  ],
+  "readouts": [
+    {
+      "group": "mn9",
+      "behavior": "feeding",
+      "neurons": [
+        {
+          "root_id": "720575940618238523",
+          "side": "left",
+          "position": "soma",
+          "point": [28.8, -56.6, 81.2]
+        },
+        {
+          "root_id": "720575940660219265",
+          "side": "right",
+          "position": "soma",
+          "point": [-93.7, -71.9, 90.2]
+        }
+      ]
+    },
+    {
+      "group": "giant_fiber",
+      "behavior": "escape",
+      "neurons": [
+        {
+          "root_id": "720575940622838154",
+          "side": "left",
+          "position": "soma",
+          "point": [45.9, 51.4, -77.5]
+        },
+        {
+          "root_id": "720575940632499757",
+          "side": "right",
+          "position": "soma",
+          "point": [-145.3, 68.4, -57.3]
+        }
+      ]
+    },
+    {
+      "group": "adn1",
+      "behavior": "antennal_grooming",
+      "neurons": [
+        {
+          "root_id": "720575940616185531",
+          "side": "right",
+          "position": "soma",
+          "point": [-106.0, -108.7, -6.9]
+        },
+        {
+          "root_id": "720575940624319124",
+          "side": "left",
+          "position": "soma",
+          "point": [32.2, -99.8, -34.0]
+        }
+      ]
+    },
+    {
+      "group": "adn2",
+      "behavior": "antennal_grooming",
+      "neurons": [
+        {
+          "root_id": "720575940629806974",
+          "side": "right",
+          "position": "soma",
+          "point": [-118.4, -102.4, -4.5]
+        },
+        {
+          "root_id": "720575940636308075",
+          "side": "left",
+          "position": "soma",
+          "point": [-19.5, -105.6, -37.5]
+        }
+      ]
+    },
+    {
+      "group": "mdn",
+      "behavior": "backward_walking",
+      "neurons": [
+        {
+          "root_id": "720575940610236514",
+          "side": "right",
+          "position": "soma",
+          "point": [-41.3, 133.7, 11.0]
+        },
+        {
+          "root_id": "720575940616026939",
+          "side": "left",
+          "position": "soma",
+          "point": [-27.9, 153.3, 19.9]
+        },
+        {
+          "root_id": "720575940631082808",
+          "side": "left",
+          "position": "soma",
+          "point": [-36.3, 135.1, 10.4]
+        },
+        {
+          "root_id": "720575940640331472",
+          "side": "right",
+          "position": "soma",
+          "point": [-38.7, 129.7, 7.6]
+        }
+      ]
+    },
+    {
+      "group": "p9",
+      "behavior": "forward_walking",
+      "neurons": [
+        {
+          "root_id": "720575940627652358",
+          "side": "right",
+          "position": "soma",
+          "point": [-144.9, 55.8, -78.3]
+        },
+        {
+          "root_id": "720575940635872101",
+          "side": "left",
+          "position": "soma",
+          "point": [65.5, 58.5, -85.0]
+        }
+      ]
+    }
+  ],
+  "source": {
+    "meshes": "https://storage.googleapis.com/flywire_neuropil_meshes/neuropils/neuropil_mesh_v141_v6",
+    "brain_mesh": "https://storage.googleapis.com/flywire_neuropil_meshes/whole_neuropil/brain_mesh_v141.surf",
+    "citations": ["dorkenwald2024", "schlegel2024", "ito2014", "jenett2012"],
+    "view": "x: -x_flywire, y: -y_flywire, z: -z_flywire (µm, merkezlenmiş)"
+  }
+}

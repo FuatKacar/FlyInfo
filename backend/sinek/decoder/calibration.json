@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-17T13:19:04+00:00",
+  "package_version": "1",
+  "neuron_groups_sha256": "f3371cca47af4f0bcb298cd3453deb80c02ecf9c251f4504cb13cf28b1ec19e2",
+  "n_trials": 30,
+  "scenario_files_sha256": {
+    "sugar@0.2": "24c5b8fee72d1124e3af673082cf5b8a77902bfbb32e2001c6227ae5d519daba",
+    "sugar@0.4": "d6cc7736f1c40b068957963409dd1d5735fd47de438b795ec9f56073f53289cd",
+    "sugar@0.6": "095c541f215b87c40dbcee57347b3cd654caa477dffb60e0cc7c3e686d55538b",
+    "sugar@0.8": "7324a7b6c30f789b990c9f2667cb77c04a89a7613b5f91073853986421c763bc",
+    "sugar@1.0": "f12f3b3a58b99848de7916f954a0c9370b966b4b233ad02a4cba849e0bbb3dd4",
+    "bitter@0.2": "64d9c9af7d4cd02c1824a6f1abb056f09ae8d10639e4c030406d8f60ff37e6c8",
+    "bitter@0.4": "7960a67d87595b9b5de8c6136f0660f587f30d32de623ce1846d20964849d256",
+    "bitter@0.6": "72e34d92f51435df2763fc2075d45d1134479b10c17d0076cdf68debd5c784ea",
+    "bitter@0.8": "c6df45ceff416e97b4883e17f5d08f3b591abbefa0da21ea6484fbdf2ab688d2",
+    "bitter@1.0": "21315c5cffda711993c073f4cd8047293cc9203428902c893233659859d91df7",
+    "water@0.2": "59b1eead6bc863c231f0c8be5d75563b972f6580c180e3af9d2826924468cf43",
+    "water@0.4": "ae33a8170dc8dd93cef9d0ba67e6c8f7449fc1c9fdb3266c6ddcce3d66ad8e18",
+    "water@0.6": "414b55e3afe9019241112329cde72914a68666852d2aae734468d80bd0f39414",
+    "water@0.8": "2404885aa228bc2d979bcb3a42cb3646ba954c65db55480951823d9d56baa06a",
+    "water@1.0": "d137235dad628fdcfe94932014dcf047f09680404a70388e716c4812053343d1",
+    "johnston_organ@0.2": "d31095affd11f34f0b8a334d9bff82224f0c9d2de67873343c2fd53340a369b3",
+    "johnston_organ@0.4": "d1fc8970323d48968ae93585d93cea4ee11cf147e42b297c8352ed77ae28a605",
+    "johnston_organ@0.6": "34c53f94a8a93283498fab9786e8402d4b7e53e89ada32b3715d0ad2883a26eb",
+    "johnston_organ@0.8": "90fe244c15aed7177b5861cfd9331eeaa78dc60393b3c323a4b776a2ccce0f60",
+    "johnston_organ@1.0": "8937401f34d2a224e3c249ed248959106622f5a0cad6853dc385876abbae1169",
+    "looming@0.2": "40a782bc2dd1cfa959cc43bbe9af5e8b6235e43d96c4f13413ea736d731dfd2b",
+    "looming@0.4": "bb8cda355f73e0b5ce2b148e3c8289125e779175ae96fadc54028f0449bd93bb",
+    "looming@0.6": "103a75298c2438e161f2c6501ea1eb1e79da929987eb82ea065646454dd2c16a",
+    "looming@0.8": "ebe8e4275e3b853db5b40732b19eff66db9456aeab8472b509fe6526776aa9d8",
+    "looming@1.0": "2e54e39cc601c6d2e03cb10eceb8d50e380cd64705efcb89b13c60e27bb74eac",
+    "geosmin@0.2": "494d90bf25bb1d50d3f4bc5d3f492b01e08f5850cc0fa6f3c72b7a1ddb0b6153",
+    "geosmin@0.4": "1c8fbc3d6c006f70fc122b399d4f6e6edb65f960c3b3c53bbd422c7556c4355c",
+    "geosmin@0.6": "a760d4319c87bd56dbfeac9c13829dccc3da3a4435b3a532dc448f290d8f19d2",
+    "geosmin@0.8": "b898eb175d1b596105dd9937e9425a804b5d6a825ce93d1a095f2fd43c9c40fa",
+    "geosmin@1.0": "79b88a9447d88139226f193416a2c181b46c3e88984a931c3725e48e52a2c3b2",
+    "co2@0.2": "1836824e7262f9b5259e191bb51a8bf22f503d10526b24c0f3320e710e7502ed",
+    "co2@0.4": "0b53fd3eee377f247b4457d57172e46f23e5dd893b062dcdc6cc094fe955b991",
+    "co2@0.6": "fae74f35a0d3ddbb203d505d65aa2759e97305b54ee03f5dac1c5f26bd2e887f",
+    "co2@0.8": "a2429548f59f4cf001b3085a92198fbc9dfbce4ccf0d9961b40ab7ed4304df9e",
+    "co2@1.0": "fda510830057f70988d610e0a528fbac6ec670859bdfe7267ea82afde0a089be"
+  },
+  "rule": "referans = tek kategorili senaryolarda okuma nöronlarının en yüksek hızı",
+  "behaviors": {
+    "feeding": {
+      "reference_rate_hz": 93.033333,
+      "reference_scenario": "sugar@1.0",
+      "reference_group": "mn9",
+      "max_observed_rate_hz": 93.033333,
+      "max_observed_scenario": "sugar@1.0"
+    },
+    "escape": {
+      "reference_rate_hz": 211.7,
+      "reference_scenario": "looming@1.0",
+      "reference_group": "giant_fiber",
+      "max_observed_rate_hz": 211.7,
+      "max_observed_scenario": "looming@1.0"
+    },
+    "antennal_grooming": {
+      "reference_rate_hz": 34.466667,
+      "reference_scenario": "johnston_organ@1.0",
+      "reference_group": "adn2",
+      "max_observed_rate_hz": 34.466667,
+      "max_observed_scenario": "johnston_organ@1.0"
+    },
+    "backward_walking": {
+      "reference_rate_hz": 21.8,
+      "reference_scenario": "looming@1.0",
+      "reference_group": "mdn",
+      "max_observed_rate_hz": 21.8,
+      "max_observed_scenario": "looming@1.0"
+    },
+    "forward_walking": {
+      "reference_rate_hz": null,
+      "reference_scenario": null,
+      "reference_group": null,
+      "max_observed_rate_hz": 1.066667,
+      "max_observed_scenario": "looming@1.0"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+
+# Araç önbellekleri
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Ortam değişkenleri (API anahtarları asla depoya girmez)
+.env
+.env.*
+!.env.example
+
+# Ham veri ve üretilen veri paketleri (Release üzerinden dağıtılır)
+data/
+artifacts/
+cache/
+
+# Frontend
+node_modules/
+frontend/dist/
+
+# Editör / işletim sistemi
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Arayüz test çıktıları (derlenmiş arayüz backend/sinek/web depoya dahildir: son kullanıcı Node.js kurmaz)
+frontend/dist-e2e/
+frontend/test-results/
+frontend/playwright-report/

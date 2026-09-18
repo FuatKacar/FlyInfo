@@ -1,0 +1,2467 @@
+{
+  "components": {
+    "schemas": {
+      "Behavior": {
+        "enum": [
+          "feeding",
+          "escape",
+          "antennal_grooming",
+          "backward_walking",
+          "forward_walking"
+        ],
+        "title": "Behavior",
+        "type": "string"
+      },
+      "BehaviorComparison": {
+        "additionalProperties": false,
+        "properties": {
+          "behavior": {
+            "$ref": "#/components/schemas/Behavior"
+          },
+          "control_rate_hz": {
+            "title": "Control Rate Hz",
+            "type": "number"
+          },
+          "difference_hz": {
+            "title": "Difference Hz",
+            "type": "number"
+          },
+          "p_value": {
+            "title": "P Value",
+            "type": "number"
+          },
+          "percent_change": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Percent Change"
+          },
+          "significant": {
+            "title": "Significant",
+            "type": "boolean"
+          },
+          "silenced_rate_hz": {
+            "title": "Silenced Rate Hz",
+            "type": "number"
+          }
+        },
+        "required": [
+          "behavior",
+          "control_rate_hz",
+          "silenced_rate_hz",
+          "difference_hz",
+          "percent_change",
+          "p_value",
+          "significant"
+        ],
+        "title": "BehaviorComparison",
+        "type": "object"
+      },
+      "BehaviorDifference": {
+        "additionalProperties": false,
+        "properties": {
+          "behavior": {
+            "$ref": "#/components/schemas/Behavior"
+          },
+          "condition": {
+            "title": "Condition",
+            "type": "string"
+          },
+          "replayed_rate_hz": {
+            "title": "Replayed Rate Hz",
+            "type": "number"
+          },
+          "reported_rate_hz": {
+            "title": "Reported Rate Hz",
+            "type": "number"
+          }
+        },
+        "required": [
+          "behavior",
+          "condition",
+          "reported_rate_hz",
+          "replayed_rate_hz"
+        ],
+        "title": "BehaviorDifference",
+        "type": "object"
+      },
+      "BehaviorReadout": {
+        "additionalProperties": false,
+        "properties": {
+          "active": {
+            "title": "Active",
+            "type": "boolean"
+          },
+          "behavior": {
+            "$ref": "#/components/schemas/Behavior"
+          },
+          "rate_hz": {
+            "minimum": 0.0,
+            "title": "Rate Hz",
+            "type": "number"
+          },
+          "rate_std_hz": {
+            "minimum": 0.0,
+            "title": "Rate Std Hz",
+            "type": "number"
+          },
+          "readout_group": {
+            "title": "Readout Group",
+            "type": "string"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          }
+        },
+        "required": [
+          "behavior",
+          "readout_group",
+          "rate_hz",
+          "rate_std_hz",
+          "active"
+        ],
+        "title": "BehaviorReadout",
+        "type": "object"
+      },
+      "BrainActivity": {
+        "additionalProperties": false,
+        "properties": {
+          "neuropil_rates_hz": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Neuropil Rates Hz",
+            "type": "object"
+          },
+          "scale": {
+            "$ref": "#/components/schemas/BrainScale",
+            "default": {
+              "max_hz": 200.0,
+              "reference_hz": 0.5
+            }
+          }
+        },
+        "required": [
+          "neuropil_rates_hz"
+        ],
+        "title": "BrainActivity",
+        "type": "object"
+      },
+      "BrainScale": {
+        "additionalProperties": false,
+        "description": "Beyin şeması parlaklık ölçeği (tüm senaryolarda sabit):\n\nparlaklık = log10(1 + hız / reference_hz) / log10(1 + max_hz / reference_hz), [0, 1]'e kırpılır.",
+        "properties": {
+          "max_hz": {
+            "default": 200.0,
+            "title": "Max Hz",
+            "type": "number"
+          },
+          "reference_hz": {
+            "default": 0.5,
+            "title": "Reference Hz",
+            "type": "number"
+          }
+        },
+        "title": "BrainScale",
+        "type": "object"
+      },
+      "CellTypeMatch": {
+        "additionalProperties": false,
+        "properties": {
+          "cell_type": {
+            "title": "Cell Type",
+            "type": "string"
+          },
+          "neuron_count": {
+            "title": "Neuron Count",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "cell_type",
+          "neuron_count"
+        ],
+        "title": "CellTypeMatch",
+        "type": "object"
+      },
+      "CellTypeResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "cell_type": {
+            "title": "Cell Type",
+            "type": "string"
+          },
+          "in_model_count": {
+            "title": "In Model Count",
+            "type": "integer"
+          },
+          "neuron_count": {
+            "title": "Neuron Count",
+            "type": "integer"
+          },
+          "neurons": {
+            "items": {
+              "$ref": "#/components/schemas/NeuronInfo"
+            },
+            "title": "Neurons",
+            "type": "array"
+          }
+        },
+        "required": [
+          "cell_type",
+          "neuron_count",
+          "in_model_count",
+          "neurons"
+        ],
+        "title": "CellTypeResponse",
+        "type": "object"
+      },
+      "CellTypeSelector": {
+        "additionalProperties": false,
+        "properties": {
+          "cell_type": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Cell Type",
+            "type": "string"
+          },
+          "kind": {
+            "const": "cell_type",
+            "default": "cell_type",
+            "title": "Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "cell_type"
+        ],
+        "title": "CellTypeSelector",
+        "type": "object"
+      },
+      "ChatRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "message": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Message",
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ],
+        "title": "ChatRequest",
+        "type": "object"
+      },
+      "ChatResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "brain": {
+            "$ref": "#/components/schemas/BrainActivity"
+          },
+          "classification": {
+            "$ref": "#/components/schemas/ClassificationInfo"
+          },
+          "hint": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/OutOfScopeHint"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "output": {
+            "$ref": "#/components/schemas/DecoderOutput"
+          },
+          "presentation": {
+            "$ref": "#/components/schemas/PresentationInfo"
+          }
+        },
+        "required": [
+          "classification",
+          "output",
+          "brain",
+          "presentation",
+          "hint"
+        ],
+        "title": "ChatResponse",
+        "type": "object"
+      },
+      "ClassificationInfo": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/EvidenceItem"
+            },
+            "title": "Evidence",
+            "type": "array"
+          },
+          "in_scope": {
+            "title": "In Scope",
+            "type": "boolean"
+          },
+          "levels": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Levels",
+            "type": "object"
+          },
+          "out_of_scope_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Out Of Scope Reason"
+          }
+        },
+        "required": [
+          "in_scope",
+          "levels",
+          "evidence",
+          "out_of_scope_reason"
+        ],
+        "title": "ClassificationInfo",
+        "type": "object"
+      },
+      "ConditionResult": {
+        "additionalProperties": false,
+        "properties": {
+          "label_tr": {
+            "title": "Label Tr",
+            "type": "string"
+          },
+          "neuropil_rates_hz": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Neuropil Rates Hz",
+            "type": "object"
+          },
+          "output": {
+            "$ref": "#/components/schemas/DecoderOutput"
+          }
+        },
+        "required": [
+          "label_tr",
+          "output",
+          "neuropil_rates_hz"
+        ],
+        "title": "ConditionResult",
+        "type": "object"
+      },
+      "DecoderOutput": {
+        "additionalProperties": false,
+        "properties": {
+          "active_neuron_count": {
+            "minimum": 0.0,
+            "title": "Active Neuron Count",
+            "type": "integer"
+          },
+          "behaviors": {
+            "items": {
+              "$ref": "#/components/schemas/BehaviorReadout"
+            },
+            "title": "Behaviors",
+            "type": "array"
+          },
+          "circuit_only": {
+            "title": "Circuit Only",
+            "type": "boolean"
+          },
+          "model": {
+            "$ref": "#/components/schemas/ModelInfo"
+          },
+          "stimulus": {
+            "$ref": "#/components/schemas/StimulusInfo"
+          },
+          "top_neuropils": {
+            "items": {
+              "$ref": "#/components/schemas/NeuropilActivity"
+            },
+            "title": "Top Neuropils",
+            "type": "array"
+          }
+        },
+        "required": [
+          "stimulus",
+          "behaviors",
+          "circuit_only",
+          "top_neuropils",
+          "active_neuron_count",
+          "model"
+        ],
+        "title": "DecoderOutput",
+        "type": "object"
+      },
+      "EvidenceItem": {
+        "additionalProperties": false,
+        "properties": {
+          "category": {
+            "title": "Category",
+            "type": "string"
+          },
+          "clause": {
+            "title": "Clause",
+            "type": "string"
+          },
+          "rule": {
+            "title": "Rule",
+            "type": "string"
+          },
+          "term": {
+            "title": "Term",
+            "type": "string"
+          }
+        },
+        "required": [
+          "category",
+          "term",
+          "clause",
+          "rule"
+        ],
+        "title": "EvidenceItem",
+        "type": "object"
+      },
+      "ExampleInfo": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "title_tr": {
+            "title": "Title Tr",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "title_tr"
+        ],
+        "title": "ExampleInfo",
+        "type": "object"
+      },
+      "ExperimentReport": {
+        "additionalProperties": false,
+        "properties": {
+          "created_utc": {
+            "title": "Created Utc",
+            "type": "string"
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance"
+          },
+          "report_version": {
+            "default": 1,
+            "title": "Report Version",
+            "type": "integer"
+          },
+          "request": {
+            "$ref": "#/components/schemas/ExperimentRequest"
+          },
+          "result": {
+            "$ref": "#/components/schemas/ExperimentResult"
+          },
+          "title_tr": {
+            "default": "Laboratuvar deneyi",
+            "maxLength": 200,
+            "title": "Title Tr",
+            "type": "string"
+          }
+        },
+        "required": [
+          "created_utc",
+          "request",
+          "result",
+          "provenance"
+        ],
+        "title": "ExperimentReport",
+        "type": "object"
+      },
+      "ExperimentRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "params": {
+            "$ref": "#/components/schemas/LabParams",
+            "default": {
+              "n_trials": 30,
+              "seed": 0,
+              "t_run_ms": 1000.0
+            }
+          },
+          "silenced": {
+            "items": {
+              "discriminator": {
+                "mapping": {
+                  "cell_type": "#/components/schemas/CellTypeSelector",
+                  "group": "#/components/schemas/GroupSelector",
+                  "ids": "#/components/schemas/IdsSelector",
+                  "neuropil": "#/components/schemas/NeuropilSelector",
+                  "neurotransmitter": "#/components/schemas/TransmitterSelector"
+                },
+                "propertyName": "kind"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/GroupSelector"
+                },
+                {
+                  "$ref": "#/components/schemas/CellTypeSelector"
+                },
+                {
+                  "$ref": "#/components/schemas/TransmitterSelector"
+                },
+                {
+                  "$ref": "#/components/schemas/NeuropilSelector"
+                },
+                {
+                  "$ref": "#/components/schemas/IdsSelector"
+                }
+              ]
+            },
+            "maxItems": 6,
+            "title": "Silenced",
+            "type": "array"
+          },
+          "stimuli": {
+            "items": {
+              "$ref": "#/components/schemas/LabStimulus"
+            },
+            "maxItems": 6,
+            "minItems": 1,
+            "title": "Stimuli",
+            "type": "array"
+          }
+        },
+        "required": [
+          "stimuli"
+        ],
+        "title": "ExperimentRequest",
+        "type": "object"
+      },
+      "ExperimentResult": {
+        "additionalProperties": false,
+        "properties": {
+          "comparisons": {
+            "items": {
+              "$ref": "#/components/schemas/BehaviorComparison"
+            },
+            "title": "Comparisons",
+            "type": "array"
+          },
+          "control": {
+            "$ref": "#/components/schemas/ConditionResult"
+          },
+          "duration_seconds": {
+            "title": "Duration Seconds",
+            "type": "number"
+          },
+          "params": {
+            "$ref": "#/components/schemas/LabParams"
+          },
+          "silenced": {
+            "items": {
+              "$ref": "#/components/schemas/Selection"
+            },
+            "title": "Silenced",
+            "type": "array"
+          },
+          "silenced_condition": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ConditionResult"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "silenced_neuron_count": {
+            "title": "Silenced Neuron Count",
+            "type": "integer"
+          },
+          "stimuli": {
+            "items": {
+              "$ref": "#/components/schemas/Selection"
+            },
+            "title": "Stimuli",
+            "type": "array"
+          },
+          "stimulus_rates_hz": {
+            "items": {
+              "type": "number"
+            },
+            "title": "Stimulus Rates Hz",
+            "type": "array"
+          },
+          "warnings_tr": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings Tr",
+            "type": "array"
+          }
+        },
+        "required": [
+          "stimuli",
+          "stimulus_rates_hz",
+          "silenced",
+          "silenced_neuron_count",
+          "params",
+          "control",
+          "silenced_condition",
+          "comparisons",
+          "warnings_tr",
+          "duration_seconds"
+        ],
+        "title": "ExperimentResult",
+        "type": "object"
+      },
+      "GroupSelector": {
+        "additionalProperties": false,
+        "properties": {
+          "group": {
+            "title": "Group",
+            "type": "string"
+          },
+          "kind": {
+            "const": "group",
+            "default": "group",
+            "title": "Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "group"
+        ],
+        "title": "GroupSelector",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "HealthResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "llm_enabled": {
+            "title": "Llm Enabled",
+            "type": "boolean"
+          },
+          "llm_provider": {
+            "$ref": "#/components/schemas/LLMProvider"
+          },
+          "status": {
+            "const": "ok",
+            "title": "Status",
+            "type": "string"
+          },
+          "version": {
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "version",
+          "llm_provider",
+          "llm_enabled"
+        ],
+        "title": "HealthResponse",
+        "type": "object"
+      },
+      "IdsSelector": {
+        "additionalProperties": false,
+        "properties": {
+          "ids": {
+            "items": {
+              "pattern": "^[0-9]{1,20}$",
+              "type": "string"
+            },
+            "maxItems": 500,
+            "minItems": 1,
+            "title": "Ids",
+            "type": "array"
+          },
+          "kind": {
+            "const": "ids",
+            "default": "ids",
+            "title": "Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ids"
+        ],
+        "title": "IdsSelector",
+        "type": "object"
+      },
+      "JobState": {
+        "enum": [
+          "queued",
+          "running",
+          "done",
+          "error"
+        ],
+        "title": "JobState",
+        "type": "string"
+      },
+      "JobStatus": {
+        "additionalProperties": false,
+        "description": "Arka planda çalışan Laboratuvar işi. Sonuç, işin türüne göre ilgili alanda döner.",
+        "properties": {
+          "error_tr": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Tr"
+          },
+          "experiment": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ExperimentResult"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "run",
+              "pathways",
+              "report",
+              "replay"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "pathways": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PathwayResponse"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "progress": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Progress",
+            "type": "number"
+          },
+          "replay": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ReplayResult"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "report": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ExperimentReport"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "state": {
+            "$ref": "#/components/schemas/JobState"
+          },
+          "step_tr": {
+            "title": "Step Tr",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "state",
+          "progress",
+          "step_tr"
+        ],
+        "title": "JobStatus",
+        "type": "object"
+      },
+      "LLMProvider": {
+        "description": "Sunum katmanında kullanılabilecek LLM sağlayıcıları.",
+        "enum": [
+          "none",
+          "gemini",
+          "groq",
+          "ollama"
+        ],
+        "title": "LLMProvider",
+        "type": "string"
+      },
+      "LabGroupInfo": {
+        "additionalProperties": false,
+        "properties": {
+          "behavior": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Behavior"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "key": {
+            "title": "Key",
+            "type": "string"
+          },
+          "name_tr": {
+            "title": "Name Tr",
+            "type": "string"
+          },
+          "neuron_count": {
+            "title": "Neuron Count",
+            "type": "integer"
+          },
+          "role": {
+            "title": "Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "name_tr",
+          "role",
+          "neuron_count",
+          "behavior"
+        ],
+        "title": "LabGroupInfo",
+        "type": "object"
+      },
+      "LabOptions": {
+        "additionalProperties": false,
+        "properties": {
+          "busy": {
+            "title": "Busy",
+            "type": "boolean"
+          },
+          "groups": {
+            "items": {
+              "$ref": "#/components/schemas/LabGroupInfo"
+            },
+            "title": "Groups",
+            "type": "array"
+          },
+          "limits": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Limits",
+            "type": "object"
+          },
+          "neuropils": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Neuropils",
+            "type": "array"
+          },
+          "neurotransmitters": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Neurotransmitters",
+            "type": "array"
+          }
+        },
+        "required": [
+          "groups",
+          "neuropils",
+          "neurotransmitters",
+          "limits",
+          "busy"
+        ],
+        "title": "LabOptions",
+        "type": "object"
+      },
+      "LabParams": {
+        "additionalProperties": false,
+        "properties": {
+          "n_trials": {
+            "default": 30,
+            "maximum": 50.0,
+            "minimum": 1.0,
+            "title": "N Trials",
+            "type": "integer"
+          },
+          "seed": {
+            "default": 0,
+            "maximum": 2147483647.0,
+            "minimum": 0.0,
+            "title": "Seed",
+            "type": "integer"
+          },
+          "t_run_ms": {
+            "default": 1000.0,
+            "maximum": 2000.0,
+            "minimum": 100.0,
+            "title": "T Run Ms",
+            "type": "number"
+          }
+        },
+        "title": "LabParams",
+        "type": "object"
+      },
+      "LabStimulus": {
+        "additionalProperties": false,
+        "properties": {
+          "rate_hz": {
+            "exclusiveMinimum": 0.0,
+            "maximum": 400.0,
+            "title": "Rate Hz",
+            "type": "number"
+          },
+          "selector": {
+            "discriminator": {
+              "mapping": {
+                "cell_type": "#/components/schemas/CellTypeSelector",
+                "group": "#/components/schemas/GroupSelector",
+                "ids": "#/components/schemas/IdsSelector",
+                "neuropil": "#/components/schemas/NeuropilSelector",
+                "neurotransmitter": "#/components/schemas/TransmitterSelector"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/GroupSelector"
+              },
+              {
+                "$ref": "#/components/schemas/CellTypeSelector"
+              },
+              {
+                "$ref": "#/components/schemas/TransmitterSelector"
+              },
+              {
+                "$ref": "#/components/schemas/NeuropilSelector"
+              },
+              {
+                "$ref": "#/components/schemas/IdsSelector"
+              }
+            ],
+            "title": "Selector"
+          }
+        },
+        "required": [
+          "selector",
+          "rate_hz"
+        ],
+        "title": "LabStimulus",
+        "type": "object"
+      },
+      "ModelInfo": {
+        "additionalProperties": false,
+        "properties": {
+          "dataset": {
+            "const": "FlyWire v783",
+            "default": "FlyWire v783",
+            "title": "Dataset",
+            "type": "string"
+          },
+          "mode": {
+            "$ref": "#/components/schemas/SimulationMode"
+          },
+          "n_trials": {
+            "minimum": 1.0,
+            "title": "N Trials",
+            "type": "integer"
+          },
+          "package_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Package Version"
+          },
+          "seed": {
+            "title": "Seed",
+            "type": "integer"
+          },
+          "sign_source": {
+            "default": "reference",
+            "enum": [
+              "reference",
+              "annotations"
+            ],
+            "title": "Sign Source",
+            "type": "string"
+          },
+          "t_run_ms": {
+            "exclusiveMinimum": 0.0,
+            "title": "T Run Ms",
+            "type": "number"
+          },
+          "type": {
+            "const": "LIF",
+            "default": "LIF",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mode",
+          "n_trials",
+          "t_run_ms",
+          "seed"
+        ],
+        "title": "ModelInfo",
+        "type": "object"
+      },
+      "NeuronInfo": {
+        "additionalProperties": false,
+        "properties": {
+          "cell_class": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cell Class"
+          },
+          "groups": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Groups",
+            "type": "array"
+          },
+          "in_model": {
+            "title": "In Model",
+            "type": "boolean"
+          },
+          "root_id": {
+            "title": "Root Id",
+            "type": "string"
+          },
+          "side": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Side"
+          },
+          "super_class": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Super Class"
+          },
+          "top_nt": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Top Nt"
+          },
+          "top_nt_conf": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Top Nt Conf"
+          }
+        },
+        "required": [
+          "root_id",
+          "in_model",
+          "side",
+          "super_class",
+          "cell_class",
+          "top_nt",
+          "top_nt_conf",
+          "groups"
+        ],
+        "title": "NeuronInfo",
+        "type": "object"
+      },
+      "NeuropilActivity": {
+        "additionalProperties": false,
+        "properties": {
+          "events_hz": {
+            "minimum": 0.0,
+            "title": "Events Hz",
+            "type": "number"
+          },
+          "neuropil": {
+            "title": "Neuropil",
+            "type": "string"
+          },
+          "share": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Share",
+            "type": "number"
+          }
+        },
+        "required": [
+          "neuropil",
+          "events_hz",
+          "share"
+        ],
+        "title": "NeuropilActivity",
+        "type": "object"
+      },
+      "NeuropilSelector": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "neuropil",
+            "default": "neuropil",
+            "title": "Kind",
+            "type": "string"
+          },
+          "neuropil": {
+            "maxLength": 20,
+            "minLength": 2,
+            "title": "Neuropil",
+            "type": "string"
+          }
+        },
+        "required": [
+          "neuropil"
+        ],
+        "title": "NeuropilSelector",
+        "type": "object"
+      },
+      "OutOfScopeHint": {
+        "additionalProperties": false,
+        "properties": {
+          "examples": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Examples",
+            "type": "array"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "examples"
+        ],
+        "title": "OutOfScopeHint",
+        "type": "object"
+      },
+      "PackageInfo": {
+        "additionalProperties": false,
+        "properties": {
+          "available": {
+            "title": "Available",
+            "type": "boolean"
+          },
+          "problem": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Problem"
+          },
+          "version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version"
+          }
+        },
+        "required": [
+          "available",
+          "version",
+          "problem"
+        ],
+        "title": "PackageInfo",
+        "type": "object"
+      },
+      "PathEdge": {
+        "additionalProperties": false,
+        "properties": {
+          "excitatory": {
+            "title": "Excitatory",
+            "type": "boolean"
+          },
+          "post_cell_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Post Cell Type"
+          },
+          "post_id": {
+            "title": "Post Id",
+            "type": "string"
+          },
+          "pre_cell_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pre Cell Type"
+          },
+          "pre_id": {
+            "title": "Pre Id",
+            "type": "string"
+          },
+          "pre_rate_hz": {
+            "title": "Pre Rate Hz",
+            "type": "number"
+          },
+          "share": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Share",
+            "type": "number"
+          },
+          "synapses": {
+            "title": "Synapses",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "pre_id",
+          "post_id",
+          "synapses",
+          "excitatory",
+          "pre_rate_hz",
+          "share"
+        ],
+        "title": "PathEdge",
+        "type": "object"
+      },
+      "Pathway": {
+        "additionalProperties": false,
+        "properties": {
+          "edges": {
+            "items": {
+              "$ref": "#/components/schemas/PathEdge"
+            },
+            "title": "Edges",
+            "type": "array"
+          },
+          "excitatory": {
+            "title": "Excitatory",
+            "type": "boolean"
+          },
+          "hops": {
+            "title": "Hops",
+            "type": "integer"
+          },
+          "strength": {
+            "exclusiveMinimum": 0.0,
+            "maximum": 1.0,
+            "title": "Strength",
+            "type": "number"
+          }
+        },
+        "required": [
+          "edges",
+          "strength",
+          "excitatory",
+          "hops"
+        ],
+        "title": "Pathway",
+        "type": "object"
+      },
+      "PathwayRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "behavior": {
+            "$ref": "#/components/schemas/Behavior"
+          },
+          "experiment": {
+            "$ref": "#/components/schemas/ExperimentRequest"
+          },
+          "max_hops": {
+            "default": 4,
+            "maximum": 6.0,
+            "minimum": 1.0,
+            "title": "Max Hops",
+            "type": "integer"
+          },
+          "top_k": {
+            "default": 5,
+            "maximum": 20.0,
+            "minimum": 1.0,
+            "title": "Top K",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "experiment",
+          "behavior"
+        ],
+        "title": "PathwayRequest",
+        "type": "object"
+      },
+      "PathwayResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "note_tr": {
+            "title": "Note Tr",
+            "type": "string"
+          },
+          "pathways": {
+            "items": {
+              "$ref": "#/components/schemas/Pathway"
+            },
+            "title": "Pathways",
+            "type": "array"
+          },
+          "target_id": {
+            "title": "Target Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "target_id",
+          "pathways",
+          "note_tr"
+        ],
+        "title": "PathwayResponse",
+        "type": "object"
+      },
+      "PresentationInfo": {
+        "additionalProperties": false,
+        "properties": {
+          "fallback_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fallback Reason"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model"
+          },
+          "provider": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Provider"
+          },
+          "source": {
+            "enum": [
+              "llm",
+              "template"
+            ],
+            "title": "Source",
+            "type": "string"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "source",
+          "provider",
+          "model",
+          "fallback_reason"
+        ],
+        "title": "PresentationInfo",
+        "type": "object"
+      },
+      "Provenance": {
+        "additionalProperties": false,
+        "properties": {
+          "calibration_sha256": {
+            "title": "Calibration Sha256",
+            "type": "string"
+          },
+          "dataset": {
+            "default": "FlyWire v783",
+            "title": "Dataset",
+            "type": "string"
+          },
+          "environment": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Environment",
+            "type": "object"
+          },
+          "neuron_groups_definitions_sha256": {
+            "title": "Neuron Groups Definitions Sha256",
+            "type": "string"
+          },
+          "sign_source": {
+            "default": "reference",
+            "title": "Sign Source",
+            "type": "string"
+          },
+          "sinek_version": {
+            "title": "Sinek Version",
+            "type": "string"
+          },
+          "sources_sha256": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Sources Sha256",
+            "type": "object"
+          }
+        },
+        "required": [
+          "sinek_version",
+          "sources_sha256",
+          "neuron_groups_definitions_sha256",
+          "calibration_sha256",
+          "environment"
+        ],
+        "title": "Provenance",
+        "type": "object"
+      },
+      "ReplayResult": {
+        "additionalProperties": false,
+        "properties": {
+          "differences": {
+            "items": {
+              "$ref": "#/components/schemas/BehaviorDifference"
+            },
+            "title": "Differences",
+            "type": "array"
+          },
+          "identical": {
+            "title": "Identical",
+            "type": "boolean"
+          },
+          "max_difference_hz": {
+            "title": "Max Difference Hz",
+            "type": "number"
+          },
+          "provenance_matches": {
+            "title": "Provenance Matches",
+            "type": "boolean"
+          },
+          "provenance_notes": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Provenance Notes",
+            "type": "array"
+          },
+          "result": {
+            "$ref": "#/components/schemas/ExperimentResult"
+          }
+        },
+        "required": [
+          "identical",
+          "max_difference_hz",
+          "differences",
+          "provenance_matches",
+          "provenance_notes",
+          "result"
+        ],
+        "title": "ReplayResult",
+        "type": "object"
+      },
+      "ReportRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "experiment": {
+            "$ref": "#/components/schemas/ExperimentRequest"
+          },
+          "title_tr": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title Tr"
+          }
+        },
+        "required": [
+          "experiment"
+        ],
+        "title": "ReportRequest",
+        "type": "object"
+      },
+      "ScenarioInfo": {
+        "additionalProperties": false,
+        "properties": {
+          "components": {
+            "items": {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            "title": "Components",
+            "type": "array"
+          },
+          "key": {
+            "title": "Key",
+            "type": "string"
+          },
+          "precomputed": {
+            "title": "Precomputed",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "key",
+          "components",
+          "precomputed"
+        ],
+        "title": "ScenarioInfo",
+        "type": "object"
+      },
+      "ScenariosResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "groups": {
+            "items": {
+              "$ref": "#/components/schemas/StimulusGroupInfo"
+            },
+            "title": "Groups",
+            "type": "array"
+          },
+          "package": {
+            "$ref": "#/components/schemas/PackageInfo"
+          },
+          "scenarios": {
+            "items": {
+              "$ref": "#/components/schemas/ScenarioInfo"
+            },
+            "title": "Scenarios",
+            "type": "array"
+          }
+        },
+        "required": [
+          "groups",
+          "package",
+          "scenarios"
+        ],
+        "title": "ScenariosResponse",
+        "type": "object"
+      },
+      "Selection": {
+        "additionalProperties": false,
+        "description": "Çözümlenmiş seçim: kullanıcıya gösterilen tanım + tekrar üretilebilir kimlik listesi.",
+        "properties": {
+          "flywire_ids": {
+            "items": {
+              "pattern": "^[0-9]{1,20}$",
+              "type": "string"
+            },
+            "title": "Flywire Ids",
+            "type": "array"
+          },
+          "label_tr": {
+            "title": "Label Tr",
+            "type": "string"
+          },
+          "missing_ids": {
+            "default": [],
+            "items": {
+              "pattern": "^[0-9]{1,20}$",
+              "type": "string"
+            },
+            "title": "Missing Ids",
+            "type": "array"
+          },
+          "selector": {
+            "discriminator": {
+              "mapping": {
+                "cell_type": "#/components/schemas/CellTypeSelector",
+                "group": "#/components/schemas/GroupSelector",
+                "ids": "#/components/schemas/IdsSelector",
+                "neuropil": "#/components/schemas/NeuropilSelector",
+                "neurotransmitter": "#/components/schemas/TransmitterSelector"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/GroupSelector"
+              },
+              {
+                "$ref": "#/components/schemas/CellTypeSelector"
+              },
+              {
+                "$ref": "#/components/schemas/TransmitterSelector"
+              },
+              {
+                "$ref": "#/components/schemas/NeuropilSelector"
+              },
+              {
+                "$ref": "#/components/schemas/IdsSelector"
+              }
+            ],
+            "title": "Selector"
+          }
+        },
+        "required": [
+          "selector",
+          "label_tr",
+          "flywire_ids"
+        ],
+        "title": "Selection",
+        "type": "object"
+      },
+      "SimulationMode": {
+        "enum": [
+          "precomputed",
+          "live"
+        ],
+        "title": "SimulationMode",
+        "type": "string"
+      },
+      "StimulateRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "components": {
+            "items": {
+              "$ref": "#/components/schemas/StimulusRequestItem"
+            },
+            "maxItems": 8,
+            "title": "Components",
+            "type": "array"
+          }
+        },
+        "required": [
+          "components"
+        ],
+        "title": "StimulateRequest",
+        "type": "object"
+      },
+      "StimulateResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "brain": {
+            "$ref": "#/components/schemas/BrainActivity"
+          },
+          "output": {
+            "$ref": "#/components/schemas/DecoderOutput"
+          }
+        },
+        "required": [
+          "output",
+          "brain"
+        ],
+        "title": "StimulateResponse",
+        "type": "object"
+      },
+      "StimulusComponent": {
+        "additionalProperties": false,
+        "properties": {
+          "group": {
+            "title": "Group",
+            "type": "string"
+          },
+          "intensity": {
+            "anyOf": [
+              {
+                "exclusiveMinimum": 0.0,
+                "maximum": 1.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Intensity"
+          },
+          "name_tr": {
+            "title": "Name Tr",
+            "type": "string"
+          },
+          "neuron_count": {
+            "minimum": 1.0,
+            "title": "Neuron Count",
+            "type": "integer"
+          },
+          "rate_hz": {
+            "exclusiveMinimum": 0.0,
+            "title": "Rate Hz",
+            "type": "number"
+          }
+        },
+        "required": [
+          "group",
+          "name_tr",
+          "rate_hz",
+          "neuron_count"
+        ],
+        "title": "StimulusComponent",
+        "type": "object"
+      },
+      "StimulusGroupInfo": {
+        "additionalProperties": false,
+        "properties": {
+          "circuit_only": {
+            "title": "Circuit Only",
+            "type": "boolean"
+          },
+          "citations": {
+            "items": {
+              "type": "integer"
+            },
+            "title": "Citations",
+            "type": "array"
+          },
+          "description_tr": {
+            "title": "Description Tr",
+            "type": "string"
+          },
+          "key": {
+            "title": "Key",
+            "type": "string"
+          },
+          "name_tr": {
+            "title": "Name Tr",
+            "type": "string"
+          },
+          "neuron_count": {
+            "title": "Neuron Count",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "key",
+          "name_tr",
+          "description_tr",
+          "neuron_count",
+          "circuit_only",
+          "citations"
+        ],
+        "title": "StimulusGroupInfo",
+        "type": "object"
+      },
+      "StimulusInfo": {
+        "additionalProperties": false,
+        "properties": {
+          "components": {
+            "items": {
+              "$ref": "#/components/schemas/StimulusComponent"
+            },
+            "title": "Components",
+            "type": "array"
+          },
+          "match_score": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Match Score"
+          },
+          "scenario_key": {
+            "title": "Scenario Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "components",
+          "scenario_key"
+        ],
+        "title": "StimulusInfo",
+        "type": "object"
+      },
+      "StimulusRequestItem": {
+        "additionalProperties": false,
+        "properties": {
+          "group": {
+            "title": "Group",
+            "type": "string"
+          },
+          "intensity": {
+            "exclusiveMinimum": 0.0,
+            "maximum": 1.0,
+            "title": "Intensity",
+            "type": "number"
+          }
+        },
+        "required": [
+          "group",
+          "intensity"
+        ],
+        "title": "StimulusRequestItem",
+        "type": "object"
+      },
+      "TransmitterSelector": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "neurotransmitter",
+            "default": "neurotransmitter",
+            "title": "Kind",
+            "type": "string"
+          },
+          "neurotransmitter": {
+            "maxLength": 20,
+            "minLength": 3,
+            "title": "Neurotransmitter",
+            "type": "string"
+          }
+        },
+        "required": [
+          "neurotransmitter"
+        ],
+        "title": "TransmitterSelector",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "description": "Drosophila konektomu üzerinde şeffaf beyin simülasyonu API'si",
+    "title": "FlyInfo",
+    "version": "0.1.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/chat": {
+      "post": {
+        "operationId": "post_chat_api_chat_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChatResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Post Chat"
+      }
+    },
+    "/api/health": {
+      "get": {
+        "operationId": "health_api_health_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Health"
+      }
+    },
+    "/api/lab/examples": {
+      "get": {
+        "operationId": "get_lab_examples_api_lab_examples_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ExampleInfo"
+                  },
+                  "title": "Response Get Lab Examples Api Lab Examples Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Get Lab Examples"
+      }
+    },
+    "/api/lab/examples/{name}": {
+      "get": {
+        "operationId": "get_lab_example_api_lab_examples__name__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExperimentReport"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Lab Example"
+      }
+    },
+    "/api/lab/jobs/{job_id}": {
+      "get": {
+        "operationId": "get_lab_job_api_lab_jobs__job_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "title": "Job Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobStatus"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Lab Job"
+      }
+    },
+    "/api/lab/options": {
+      "get": {
+        "operationId": "get_lab_options_api_lab_options_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LabOptions"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Get Lab Options"
+      }
+    },
+    "/api/lab/pathways": {
+      "post": {
+        "operationId": "post_lab_pathways_api_lab_pathways_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PathwayRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobStatus"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Post Lab Pathways"
+      }
+    },
+    "/api/lab/replay": {
+      "post": {
+        "operationId": "post_lab_replay_api_lab_replay_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "title": "Report",
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobStatus"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Post Lab Replay"
+      }
+    },
+    "/api/lab/report": {
+      "post": {
+        "operationId": "post_lab_report_api_lab_report_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReportRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobStatus"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Post Lab Report"
+      }
+    },
+    "/api/lab/run": {
+      "post": {
+        "operationId": "post_lab_run_api_lab_run_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExperimentRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobStatus"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Post Lab Run"
+      }
+    },
+    "/api/neurons/search": {
+      "get": {
+        "operationId": "get_neuron_search_api_neurons_search_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "schema": {
+              "maxLength": 100,
+              "minLength": 1,
+              "title": "Q",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 20,
+              "maximum": 50,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/CellTypeMatch"
+                  },
+                  "title": "Response Get Neuron Search Api Neurons Search Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Neuron Search"
+      }
+    },
+    "/api/neurons/{cell_type}": {
+      "get": {
+        "operationId": "get_neurons_api_neurons__cell_type__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cell_type",
+            "required": true,
+            "schema": {
+              "maxLength": 100,
+              "minLength": 1,
+              "title": "Cell Type",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CellTypeResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Neurons"
+      }
+    },
+    "/api/scenarios": {
+      "get": {
+        "operationId": "get_scenarios_api_scenarios_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScenariosResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Get Scenarios"
+      }
+    },
+    "/api/stimulate": {
+      "post": {
+        "operationId": "post_stimulate_api_stimulate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StimulateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StimulateResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Post Stimulate"
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+cff-version: 1.2.0
+message: >-
+  FlyInfo'yu kullanırsanız lütfen yazılıma aşağıdaki bilgilerle atıf yapın. FlyInfo, FlyWire
+  bağlantı haritası ve Shiu et al. (2024) beyin modeli üzerine kuruludur; bu çalışmalara da
+  atıf yapmanız gerekir (bkz. references).
+title: "FlyInfo: meyve sineği konektomu üzerinde Türkçe ve şeffaf tam beyin simülasyonu"
+abstract: >-
+  FlyInfo, Drosophila melanogaster'ın FlyWire konektomu (v783) üzerinde çalışan, Türkçe ve
+  bilimsel olarak şeffaf bir tam beyin simülasyonu arayüzüdür. Türkçe mesajlar duyusal nöron
+  uyarımına çevrilir, sızıntılı birleştir-ateşle (LIF) modeliyle simüle edilir ve davranışla
+  nedensel ilişkisi gösterilmiş okuma nöronlarından çözümlenir. Laboratuvar sekmesi doğrudan
+  uyarım, susturma deneyleri, sinyal yolu izleme ve tekrarlanabilir deney raporları sunar.
+type: software
+authors:
+  - given-names: Fuat
+    family-names: Kacar
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/FuatKacar/FlyInfo"
+keywords:
+  - Drosophila
+  - connectome
+  - FlyWire
+  - leaky integrate-and-fire
+  - computational neuroscience
+  - Turkish
+references:
+  - type: article
+    title: Neuronal wiring diagram of an adult brain
+    authors:
+      - family-names: Dorkenwald
+        given-names: Sven
+      - name: FlyWire Consortium
+    journal: Nature
+    volume: 634
+    start: 124
+    end: 138
+    year: 2024
+    doi: 10.1038/s41586-024-07558-y
+  - type: article
+    title: Whole-brain annotation and multi-connectome cell typing of Drosophila
+    authors:
+      - family-names: Schlegel
+        given-names: Philipp
+      - name: FlyWire Consortium
+    journal: Nature
+    volume: 634
+    start: 139
+    end: 152
+    year: 2024
+    doi: 10.1038/s41586-024-07686-5
+  - type: article
+    title: A Drosophila computational brain model reveals sensorimotor processing
+    authors:
+      - family-names: Shiu
+        given-names: Philip K.
+    journal: Nature
+    volume: 634
+    start: 210
+    end: 219
+    year: 2024
+    doi: 10.1038/s41586-024-07763-9

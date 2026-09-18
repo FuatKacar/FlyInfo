@@ -1,0 +1,53 @@
+name: Yayın
+
+# Sürüm etiketi (ör. v0.1.0) itildiğinde: tüm denetimler koşulur, derlenmiş arayüzün güncelliği
+# doğrulanır ve GitHub Release oluşturulur.
+#
+# Hazır senaryo paketi (flyinfo-senaryolar-1.zip) bu iş akışında ÜRETİLMEZ: üretimi ekran kartıyla
+# ~5 saat sürer. Bakımcı paketi yerelde `uv run sinek paketle` ile arşivler ve `veri-v1` etiketli
+# Release'e yükler (README, "Yeni sürüm yayımlama"). Arşivin SHA-256 özeti kodda sabittir;
+# kullanıcılar indirdiğinde doğrulanır.
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  yayin:
+    name: Denetle ve yayımla
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: uv sync --locked
+      - name: Python denetimleri ve testleri
+        run: |
+          uv run ruff check
+          uv run ruff format --check
+          uv run mypy
+          uv run pytest -m "not veri"
+      - name: Sürüm etiketi paket sürümüyle aynı mı
+        run: |
+          surum=$(uv run python -c "import tomllib;print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")
+          test "v$surum" = "$GITHUB_REF_NAME" || { echo "Etiket $GITHUB_REF_NAME, pyproject v$surum"; exit 1; }
+      - name: Arayüz testleri ve derlemenin güncelliği
+        working-directory: frontend
+        run: |
+          npm ci
+          npx biome ci .
+          npx tsc --noEmit
+          npm test
+          npm run build
+          git diff --exit-code -- ../backend/sinek/web
+      - name: Release oluştur
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" --title "FlyInfo $GITHUB_REF_NAME" --generate-notes --verify-tag

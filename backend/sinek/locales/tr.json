@@ -1,0 +1,580 @@
+{
+  "behaviors": {
+    "feeding": "beslenme (hortum uzatma)",
+    "escape": "kaçış",
+    "antennal_grooming": "anten temizleme",
+    "backward_walking": "geri yürüme",
+    "forward_walking": "ileri yürüme"
+  },
+  "behavior_keywords": {
+    "feeding": [
+      "beslenme",
+      "hortum",
+      "yeme"
+    ],
+    "escape": [
+      "kaçış",
+      "kaçma",
+      "sıçrama"
+    ],
+    "antennal_grooming": [
+      "temizleme",
+      "temizlenme",
+      "anten temiz"
+    ],
+    "backward_walking": [
+      "geri yürü"
+    ],
+    "forward_walking": [
+      "ileri yürü"
+    ]
+  },
+  "readout_neurons": {
+    "mn9": "MN9",
+    "giant_fiber": "dev lif",
+    "adn1": "aDN1",
+    "adn2": "aDN2",
+    "mdn": "MDN",
+    "p9": "P9"
+  },
+  "template": {
+    "stimulus": "{items} uyarıldı.",
+    "stimulus_component": "{name} ({rate} Hz, {count} nöron)",
+    "no_stimulus": "Mesaj hiçbir duyusal kategoriyle eşleşmedi; nöronlara uyarım uygulanmadı.",
+    "behaviors_active": "Etkin davranış devreleri: {items}.",
+    "behavior_item": "{behavior} %{score} ({neuron} {rate} Hz)",
+    "behavior_item_unscored": "{behavior} ({neuron} {rate} Hz)",
+    "behaviors_none": "Belirgin bir davranış çıktısı oluşmadı.",
+    "circuit_only": "Bu uyarımın modelde doğrudan bir davranış karşılığı yok; yalnızca devre aktivitesi gösteriliyor.",
+    "neuropils": "En yoğun aktivite: {items}.",
+    "neuropil_item": "{name} (%{share})",
+    "list_and": " ve "
+  },
+  "presentation": {
+    "negations": [
+      "yok",
+      "değil",
+      "sessiz",
+      "görülmedi",
+      "oluşmadı",
+      "etkinleşmedi",
+      "aktifleşmedi",
+      "tetiklenmedi",
+      "kapalı"
+    ],
+    "forbidden_words": [
+      "mutlu",
+      "üzgün",
+      "korktu",
+      "korkuyor",
+      "seviyor",
+      "sevdi",
+      "istiyor",
+      "istedi",
+      "hissediyor",
+      "hissetti",
+      "düşünüyor",
+      "düşündü",
+      "anlıyor",
+      "anladı",
+      "keyif",
+      "heyecan",
+      "sinirli",
+      "kızgın",
+      "aç hissi",
+      "merak"
+    ]
+  },
+  "chat": {
+    "out_of_scope_hint_title": "Sinek dil anlamaz; ona bir şey sunmayı deneyin:",
+    "out_of_scope_examples": [
+      "Sana biraz bal getirdim",
+      "Önüne bir damla su koydum",
+      "Antenlerine hafifçe üfledim",
+      "Elimi sana doğru yaklaştırıyorum",
+      "Bal ile acı bir sıvıyı karıştırıp önüne koydum"
+    ],
+    "brain_caption": "Parlaklık: simüle edilmiş sinaptik aktivite (30 deneme ortalaması)",
+    "out_of_scope_reasons": {
+      "soru": "Soru cümlesi: sineğe bir şey sunulmadı.",
+      "gelecek veya dilek": "Gelecekteki ya da istenen bir durum: şu anda bir uyarım yok.",
+      "gelecek zaman": "Gelecek zaman: şu anda bir uyarım yok.",
+      "koşul veya dilek": "Koşul ya da dilek: gerçekleşmiş bir uyarım yok.",
+      "kapsam dışı ifade": "Bu uyarıcının modelde karşılığı yok (ör. acı biber, ses, ışık rengi).",
+      "yalnızca konu": "Uyarıcıdan yalnızca konu olarak söz edildi; sineğe sunulmadı.",
+      "olumsuzluk": "Olumsuz cümle: uyarıcı sunulmadı.",
+      "tanınan uyarıcı yok": "Mesajda modelin tanıdığı bir duyusal uyarıcı bulunamadı."
+    }
+  },
+  "neuropils": {
+    "sides": {
+      "L": "sol",
+      "R": "sağ"
+    },
+    "names": {
+      "AL": [
+        "Anten lobu",
+        "antennal lobe"
+      ],
+      "AME": [
+        "Yardımcı medulla",
+        "accessory medulla"
+      ],
+      "AMMC": [
+        "Anten mekanosensör ve motor merkezi",
+        "antennal mechanosensory and motor center"
+      ],
+      "AOTU": [
+        "Ön optik tüberkül",
+        "anterior optic tubercle"
+      ],
+      "ATL": [
+        "Boynuz bölgesi",
+        "antler"
+      ],
+      "AVLP": [
+        "Ön ventrolateral protoserebrum",
+        "anterior ventrolateral protocerebrum"
+      ],
+      "BU": [
+        "Soğancık",
+        "bulb"
+      ],
+      "CAN": [
+        "Kantl bölgesi",
+        "cantle"
+      ],
+      "CRE": [
+        "Krepin",
+        "crepine"
+      ],
+      "EB": [
+        "Elipsoit cisim",
+        "ellipsoid body"
+      ],
+      "EPA": [
+        "Apolet",
+        "epaulette"
+      ],
+      "FB": [
+        "Yelpaze biçimli cisim",
+        "fan-shaped body"
+      ],
+      "FLA": [
+        "Flanş",
+        "flange"
+      ],
+      "GA": [
+        "Gal",
+        "gall"
+      ],
+      "GNG": [
+        "Gnatal gangliyonlar",
+        "gnathal ganglia"
+      ],
+      "GOR": [
+        "Gorget",
+        "gorget"
+      ],
+      "IB": [
+        "Alt köprü",
+        "inferior bridge"
+      ],
+      "ICL": [
+        "Alt kıskaç",
+        "inferior clamp"
+      ],
+      "IPS": [
+        "Alt arka yamaç",
+        "inferior posterior slope"
+      ],
+      "LA": [
+        "Lamina",
+        "lamina"
+      ],
+      "LAL": [
+        "Yan yardımcı lob",
+        "lateral accessory lobe"
+      ],
+      "LH": [
+        "Yan boynuz",
+        "lateral horn"
+      ],
+      "LO": [
+        "Lobula",
+        "lobula"
+      ],
+      "LOP": [
+        "Lobula plakası",
+        "lobula plate"
+      ],
+      "MB_CA": [
+        "Mantar cisim kaliksi",
+        "mushroom body calyx"
+      ],
+      "MB_ML": [
+        "Mantar cisim iç lobu",
+        "mushroom body medial lobe"
+      ],
+      "MB_PED": [
+        "Mantar cisim sapı",
+        "mushroom body pedunculus"
+      ],
+      "MB_VL": [
+        "Mantar cisim dikey lobu",
+        "mushroom body vertical lobe"
+      ],
+      "ME": [
+        "Medulla",
+        "medulla"
+      ],
+      "NO": [
+        "Nodüller",
+        "noduli"
+      ],
+      "OCG": [
+        "Ocellus gangliyonu",
+        "ocellar ganglion"
+      ],
+      "PB": [
+        "Protoserebral köprü",
+        "protocerebral bridge"
+      ],
+      "PLP": [
+        "Arka yan protoserebrum",
+        "posterior lateral protocerebrum"
+      ],
+      "PRW": [
+        "Pruva",
+        "prow"
+      ],
+      "PVLP": [
+        "Arka ventrolateral protoserebrum",
+        "posterior ventrolateral protocerebrum"
+      ],
+      "SAD": [
+        "Eyer",
+        "saddle"
+      ],
+      "SCL": [
+        "Üst kıskaç",
+        "superior clamp"
+      ],
+      "SIP": [
+        "Üst ara protoserebrum",
+        "superior intermediate protocerebrum"
+      ],
+      "SLP": [
+        "Üst yan protoserebrum",
+        "superior lateral protocerebrum"
+      ],
+      "SMP": [
+        "Üst iç protoserebrum",
+        "superior medial protocerebrum"
+      ],
+      "SPS": [
+        "Üst arka yamaç",
+        "superior posterior slope"
+      ],
+      "VES": [
+        "Yelek",
+        "vest"
+      ],
+      "WED": [
+        "Kama",
+        "wedge"
+      ]
+    }
+  },
+  "ui": {
+    "app_title": "FlyInfo",
+    "app_subtitle": "Meyve sineği beyin simülasyonu · FlyWire konektomu",
+    "tabs": {
+      "chat": "Sohbet",
+      "lab": "Laboratuvar",
+      "about": "Nasıl çalışıyor?"
+    },
+    "theme": {
+      "label": "Tema",
+      "light": "Açık",
+      "dark": "Koyu",
+      "system": "Sistem"
+    },
+    "composer": {
+      "placeholder": "Sineğe bir şey sunun… (ör. Sana biraz bal getirdim)",
+      "send": "Gönder",
+      "label": "Mesaj"
+    },
+    "welcome": {
+      "title": "Bir meyve sineğinin beynine mesaj gönderin",
+      "body": "Yazdığınız mesaj sineğin gerçek duyusal nöronlarına uygulanan bir uyarıma çevrilir. 138.639 nöronluk FlyWire beyin haritası üzerinde simülasyon çalışır ve sonuç, hangi davranış devrelerinin etkinleştiğiyle birlikte gösterilir. Sinek dil anlamaz; ona bir şey sunmanız gerekir.",
+      "try": "Şunlardan birini deneyin:"
+    },
+    "pending": "Simülasyon sonucu alınıyor…",
+    "pending_live": "Bu senaryo hazır pakette yok; beyin şu anda bilgisayarınızda simüle ediliyor. Bu işlem birkaç dakika sürebilir.",
+    "error": "Yanıt alınamadı: {detail}",
+    "retry": "Tekrar dene",
+    "fly": "Sinek",
+    "you": "Siz",
+    "source": {
+      "template": "Şablon metin",
+      "llm": "Dil modeli ({model})",
+      "note": "Sunum katmanı: metin yalnızca simülasyon sonucunu dile getirir, yorum eklemez."
+    },
+    "how": {
+      "toggle": "Bu yanıt nasıl üretildi?",
+      "step1": "1. Girdi eşleme",
+      "step2": "2. Simülasyon",
+      "step3": "3. Çözümleyici",
+      "step4": "4. Sunum",
+      "levels": {
+        "1": "hafif",
+        "2": "orta",
+        "3": "güçlü"
+      },
+      "evidence": "Kanıt: “{term}” ({rule})",
+      "out_of_scope": "Kapsam dışı",
+      "no_stimulus": "Uyarım uygulanmadı (kontrol senaryosu).",
+      "mode": {
+        "precomputed": "Hazır senaryo (paket {version})",
+        "live": "Canlı simülasyon"
+      },
+      "trials": "{trials} deneme × {seconds} sn, tohum {seed}",
+      "active_neurons": "{count} nöron en az bir kez ateşledi",
+      "behavior_active": "etkin",
+      "behavior_inactive": "sessiz",
+      "unscored": "kalibrasyon yok",
+      "score_help": "Skor: okuma nöronunun hızı ÷ bu davranışın kalibrasyon referansı.",
+      "circuit_only": "Bu uyarımın modelde doğrudan davranış karşılığı yok; yalnızca devre aktivitesi.",
+      "top_neuropils": "En yoğun sinaptik aktivite",
+      "presentation_template": "Şablon metin kullanıldı.",
+      "presentation_llm": "{provider} / {model} üretti; doğrulayıcıdan geçti.",
+      "fallback": "Dil modeli kullanılamadı: {reason}",
+      "raw": "Ham JSON"
+    },
+    "brain": {
+      "title": "Beyin etkinliği",
+      "right_of_fly": "Sineğin sağı",
+      "left_of_fly": "Sineğin solu",
+      "view": "Önden görünüm",
+      "idle": "Mesaj gönderildiğinde uyarımın beyindeki etkinliği burada görünür.",
+      "scale": "Sinaps ağırlıklı ortalama ateşleme hızı (Hz, logaritmik)",
+      "top": "En etkin bölgeler",
+      "readouts": "Davranış nöronları (hücre gövdesi konumu)",
+      "none_active": "Belirgin bölgesel etkinlik yok.",
+      "neuropil_tooltip": "{name} ({code}): {rate} Hz",
+      "circuit_only_note": "Koku uyarımları modelde beyin boyunca geniş ve olasılıksal bir yayılmaya yol açar; bu etkinlik temkinle yorumlanmalıdır (Nasıl çalışıyor? → Sınırlılıklar).",
+      "view_label": "Görünüm",
+      "view_2d": "2B",
+      "view_3d": "3B",
+      "rotate_hint": "Sol tıkla sürükleyerek döndürün, tekerlekle yakınlaştırın.",
+      "loading_3d": "Beyin modeli yükleniyor…",
+      "webgl_missing": "Tarayıcınız 3B görünümü desteklemiyor; 2B şema gösteriliyor.",
+      "error_3d": "3B görünüm açılamadı ({detail}); 2B şema gösteriliyor."
+    },
+    "about": {
+      "title": "Nasıl çalışıyor?",
+      "lead": "FlyInfo, bir meyve sineğinin (Drosophila melanogaster) tüm beyninin bağlantı haritası üzerinde çalışan bir simülasyondur. Sinek sizi anlamaz ve konuşmaz: gördüğünüz yanıt, sineğin duyusal nöronlarına verilen uyarımın beyinde nasıl yayıldığının ve hangi davranış devrelerini etkinleştirdiğinin ölçümüdür. Mesajınız dört katmandan geçer; her katmanın çıktısı yanıtın altındaki “Bu yanıt nasıl üretildi?” panelinde görülebilir.",
+      "sections": [
+        {
+          "id": "girdi",
+          "title": "1. Girdi eşleme: metin → uyarım",
+          "paragraphs": [
+            "Mesaj, deterministik bir Türkçe kural sınıflandırıcısıyla yedi duyusal kategoriden bir veya birkaçına eşlenir: tatlı, acı, su, antene dokunma (Johnston organı), yaklaşan nesne, kötü koku (geosmin) ve CO₂. Olumsuz cümleler, sorular, gelecek zaman ve konu olarak geçen sözcükler uyarım sayılmaz.",
+            "Yoğunluk sözcükleri (“biraz”, “çok”) üç düzeye ayrılır ve uyarım frekansına eşlenir: hafif 40 Hz, orta 120 Hz, güçlü 200 Hz.",
+            "Sınıflandırıcı, geliştirme sırasında hiç kullanılmamış ve önceden mühürlenmiş 304 cümlelik bir test setinde makro F1 = 0,879 başarı gösterdi."
+          ]
+        },
+        {
+          "id": "simulasyon",
+          "title": "2. Simülasyon: tam beyin LIF modeli",
+          "paragraphs": [
+            "Model, Shiu ve ark. (2024) sızıntılı birleştir-ateşle (LIF) modelidir [3]; parametreleri makalenin koduyla aynıdır. Bağlantı haritası FlyWire v783'tür [1], [2]: 138.639 nöron, 15.091.983 bağlantı ve 54.492.922 sinaps. Bir sinapsın uyarıcı ya da baskılayıcı oluşu, nörotransmitter tahmininden gelir [4].",
+            "Seçilen duyusal nöronlara Poisson dağılımlı spike girdisi verilir. Her senaryo 30 bağımsız deneme × 1 saniye simüle edilir; gösterilen hızlar deneme ortalamasıdır. 225 senaryo (7 kategori × 5 yoğunluk ve tüm ikili kombinasyonlar) önceden hesaplanmıştır; diğer durumlar bilgisayarınızda aynı modelle canlı simüle edilir.",
+            "Doğrulama: Model, makalenin 22 deneyini makalenin kendi verisiyle yeniden üretir (tüm beyin karşılaştırmalarında Pearson r ≥ 0,998). Küçük test ağlarında referans Brian2 modeliyle spike zamanları birebir aynıdır."
+          ]
+        },
+        {
+          "id": "cozumleyici",
+          "title": "3. Çözümleyici: nöral etkinlik → davranış",
+          "paragraphs": [
+            "Davranışlar, literatürde o davranışla nedensel ilişkisi deneysel olarak gösterilmiş okuma nöronlarından okunur: beslenme MN9 [6], kaçış dev lif [11], [12], anten temizleme aDN1 ve aDN2 [10], geri yürüme MDN [16], [18], ileri yürüme P9 [17].",
+            "Okuma nöronu en az 5 Hz ateşliyor ve 30 deneme boyunca sıfırdan istatistiksel olarak ayırt edilebiliyorsa davranış “etkin” sayılır. Skor, ateşleme hızının o davranış için ölçülen en güçlü doğal yanıta oranıdır. Hiçbir uyarım ileri yürümeyi etkinleştirmediği için bu davranışın skoru yoktur.",
+            "Çözümleyici öğrenilmiş bir model ya da dil modeli değildir; kuralları açıktır ve projenin belgelerinde gerekçeleriyle yazılıdır."
+          ]
+        },
+        {
+          "id": "sunum",
+          "title": "4. Sunum: sonuç → Türkçe metin",
+          "paragraphs": [
+            "Yanıt metni sabit bir şablonla ya da, bir API anahtarı tanımlanmışsa, bir dil modeliyle üretilir. Dil modeline yalnızca çözümleyicinin çıktısı gönderilir; mesajınız gönderilmez.",
+            "Dil modelinin metni otomatik olarak denetlenir: sonuçta olmayan bir sayı içeriyorsa, etkin bir davranışı atlıyorsa ya da sineğe duygu veya niyet atfediyorsa (ör. “sinek mutlu”) reddedilir ve şablon metin gösterilir."
+          ]
+        },
+        {
+          "id": "sema",
+          "title": "Beyin görünümü",
+          "paragraphs": [
+            "Beyin, 78 bölgenin (nöropil) FlyWire uzayındaki üç boyutlu yüzeylerinden çizilir [19], [20]. Varsayılan 3B görünümde modeli sol tıklayıp sürükleyerek döndürebilir, tekerlekle yakınlaştırabilirsiniz; bir bölgenin üzerine gelince adı ve o andaki hızı görünür. 2B görünüm aynı yüzeylerin önden izdüşümüdür: daha hafiftir ve WebGL gerektirmez. Seçiminiz tarayıcınızda saklanır. Her iki görünümde de sineğin sağı ekranın solundadır.",
+            "Bir bölgenin parlaklığı, o bölgedeki sinapsların ağırlıklı ortalama ateşleme hızıdır (Hz). Ölçek tüm mesajlarda aynı ve logaritmiktir; bu sayede farklı mesajların şemaları doğrudan karşılaştırılabilir. Turuncu noktalar davranış okuma nöronlarının hücre gövdesi konumlarıdır ve davranış etkinleştiğinde vurgulanır."
+          ]
+        }
+      ],
+      "limitations_title": "Sınırlılıklar",
+      "limitations": [
+        "Model bir basitleştirmedir: nöronlar yalnızca zar potansiyeliyle temsil edilir; elektriksel sinapslar, nöromodülasyon, öğrenme ve vücut (ventral sinir kordonu, kaslar) modelde yoktur. “Etkin davranış devresi”, sineğin o davranışı gerçekten yapacağı anlamına gelmez.",
+        "Ateşleme hızları gerçek bir sinek beyninden ölçülmemiştir; modelin çıktısıdır.",
+        "Sinaps işaretleri nörotransmitter tahminlerine dayanır; referans modeldeki gibi dopamin, serotonin ve oktopamin uyarıcı kabul edilir.",
+        "Kötü koku ve CO₂ uyarımları modelde beyin boyunca geniş ve olasılıksal bir yayılmaya yol açar; biyolojide bu sinyaller dar kanallardan iletilir [14]. Bu uyarımlarda davranış iddia edilmez ve şemadaki geniş etkinlik temkinle yorumlanmalıdır.",
+        "Hafif yoğunluk (40 Hz) bazı devreleri başlatmaya yetmez: örneğin “biraz bal” beslenme devresini etkinleştirmez, orta yoğunluk etkinleştirir. Sözcüklerin frekanslara eşlenmesi bir tasarım tercihidir.",
+        "Makale FlyWire v630 verisini, uygulama ise v783'ü kullanır. İki sürüm arasında kimliği değişen 3 referans nöronun (şekere duyarlı 1, acıya duyarlı 1, Johnston organı 1) güncel karşılıkları FlyWire CAVE servisiyle hacim örtüşmesine göre belirlenmiştir; bu düzeltmeyle makalenin sonuçları v783'te de korunur.",
+        "Sınıflandırıcı kural tabanlıdır; mecazları ve bazı fiilleri yanlış anlayabilir. Bilinen bir hata: “çiçek” sözcüğü yazım hatası sanılıp “çilek” olarak algılanabilir."
+      ],
+      "glossary_title": "Terimler",
+      "glossary": [
+        [
+          "Konektom",
+          "Bir beyindeki tüm nöronların ve aralarındaki sinaptik bağlantıların haritası."
+        ],
+        [
+          "FlyWire",
+          "Bir dişi meyve sineği beyninin elektron mikroskobu görüntülerinden yeniden inşa edilen açık bağlantı haritası [1]."
+        ],
+        [
+          "Nöron",
+          "Elektriksel sinyal üreten ve ileten sinir hücresi."
+        ],
+        [
+          "Sinaps",
+          "İki nöron arasındaki bağlantı noktası; uyarıcı ya da baskılayıcı olabilir."
+        ],
+        [
+          "Nöropil",
+          "Beyinde sinapsların yoğun olduğu, adlandırılmış bölge (ör. anten lobu)."
+        ],
+        [
+          "Spike",
+          "Nöronun kısa süreli elektriksel ateşlemesi (aksiyon potansiyeli)."
+        ],
+        [
+          "Ateşleme hızı (Hz)",
+          "Bir nöronun saniyedeki ortalama spike sayısı."
+        ],
+        [
+          "LIF modeli",
+          "Nöronu, girdilerini biriktiren, eşiği aşınca ateşleyen ve ardından sıfırlanan basit bir devre olarak ele alan model (leaky integrate-and-fire)."
+        ],
+        [
+          "Poisson uyarımı",
+          "Ortalama frekansı sabit, zamanlaması rastgele spike girdisi."
+        ],
+        [
+          "Duyusal nöron",
+          "Tat, dokunma, ışık veya koku gibi uyarıcıları algılayan nöron. GRN: tat alıcı nöron."
+        ],
+        [
+          "İnen nöron (DN)",
+          "Beyinden vücuda komut ileten nöron; davranışları başlatabilir."
+        ],
+        [
+          "Okuma nöronu",
+          "Çözümleyicinin bir davranışı ölçmek için izlediği nöron."
+        ],
+        [
+          "Deneme",
+          "Aynı uyarımın bağımsız bir simülasyon tekrarı."
+        ],
+        [
+          "Tohum",
+          "Rastgele sayı üretecinin başlangıç değeri; aynı tohum aynı sonucu verir."
+        ],
+        [
+          "Kalibrasyon",
+          "Skorların, her davranış için ölçülen en güçlü doğal yanıta göre ölçeklenmesi."
+        ]
+      ],
+      "references_title": "Kaynakça"
+    },
+    "show_in_brain": "Beyin şemasında göster",
+    "package_warning": "Hazır senaryo paketi kullanılamıyor ({detail}). Yanıtlar bilgisayarınızda canlı simüle edilecek; her mesaj birkaç dakika sürebilir.",
+    "pending_elapsed": "{seconds} sn",
+    "lab": {
+      "title": "Laboratuvar",
+      "intro": "Nöronları doğrudan uyarın, susturma deneyleri yapın, sinyal yollarını izleyin ve deneyinizi tekrarlanabilir bir raporla kaydedin. Bu sekmede metin ve dil modeli katmanları devre dışıdır.",
+      "setup": "Deney kurulumu",
+      "stimuli": "Uyarım",
+      "silencing": "Susturma",
+      "add": "Ekle",
+      "remove": "Kaldır",
+      "rate": "Frekans (Hz)",
+      "params": {
+        "title": "Parametreler",
+        "n_trials": "Deneme sayısı",
+        "t_run_ms": "Süre (ms)",
+        "seed": "Tohum",
+        "help": "Varsayılanlar referans çalışmanın değerleridir: 30 deneme × 1000 ms. Aynı tohum aynı sonucu verir."
+      },
+      "selector": {
+        "kind": "Seçim türü",
+        "group": "Hazır grup",
+        "cell_type": "Hücre tipi",
+        "neurotransmitter": "Nörotransmitter",
+        "neuropil": "Beyin bölgesi",
+        "ids": "Nöron kimlikleri",
+        "search_placeholder": "Hücre tipi arayın (ör. LB3, DNp01)",
+        "ids_placeholder": "Her satıra bir FlyWire kimliği",
+        "no_match": "Eşleşme yok",
+        "neuron_count": "{count} nöron"
+      },
+      "run": "Deneyi çalıştır",
+      "running": "Çalışıyor",
+      "cancel_note": "Deney bilgisayarınızda çalışır; tam beyinde yaklaşık 1,5 dakika sürer.",
+      "busy": "Başka bir deney çalışıyor.",
+      "error": "Deney başarısız: {detail}",
+      "results": {
+        "title": "Sonuçlar",
+        "control": "Kontrol",
+        "silenced": "Susturma",
+        "behavior": "Davranış",
+        "difference": "Fark",
+        "significance": "p değeri",
+        "significant": "anlamlı",
+        "not_significant": "anlamlı değil",
+        "no_silencing": "Susturma uygulanmadı; yalnızca uyarım sonucu gösteriliyor.",
+        "duration": "Süre: {seconds} sn",
+        "stimulated": "Uyarılan: {items}",
+        "silenced_count": "Susturulan nöron: {count}",
+        "condition": "Gösterilen koşul"
+      },
+      "pathways": {
+        "title": "Sinyal yolları",
+        "behavior": "Hedef davranış",
+        "run": "Yolları bul",
+        "target": "Hedef nöron: {id}",
+        "strength": "Yol gücü",
+        "share": "%{share} pay",
+        "excitatory": "uyarıcı",
+        "inhibitory": "baskılayıcı",
+        "empty": "Bu uyarımdan hedefe giden anlamlı bir yol bulunamadı.",
+        "hops": "{hops} adım"
+      },
+      "report": {
+        "title": "Deney raporu",
+        "download": "Raporu indir",
+        "load": "Rapor yükle",
+        "title_placeholder": "Deney başlığı",
+        "replay": "Raporu yeniden koş",
+        "identical": "Yeniden koşulan deney raporla birebir aynı sonucu verdi.",
+        "different": "Sonuçlar farklı: en büyük fark {difference} Hz.",
+        "provenance_ok": "Veri ve tanım özetleri raporla aynı.",
+        "provenance_warning": "Uyarı: {notes}",
+        "help": "Rapor; tüm ayarları, tohumu, çözümlenmiş nöron kimliklerini ve veri sürümü özetlerini içerir. Başka bir bilgisayarda yüklenip yeniden koşulabilir."
+      },
+      "examples": {
+        "title": "Örnek deneyler",
+        "help": "Makaledeki deneylerin bu uygulamayla üretilmiş raporları. Açınca ayarlar forma dolar ve kayıtlı sonuç hemen görünür; \"Deneyi çalıştır\" ile kendiniz yeniden koşabilirsiniz.",
+        "loaded": "Kayıtlı örnek rapor gösteriliyor: {title}"
+      }
+    }
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "report_version": 1,
+  "created_utc": "2026-09-18T07:00:23+00:00",
+  "title_tr": "Acı, şekerin tetiklediği beslenmeyi baskılar (Shiu et al. 2024, şekil 3A)",
+  "request": {
+    "stimuli": [
+      {
+        "selector": {
+          "kind": "group",
+          "group": "sugar"
+        },
+        "rate_hz": 200.0
+      },
+      {
+        "selector": {
+          "kind": "group",
+          "group": "bitter"
+        },
+        "rate_hz": 200.0
+      }
+    ],
+    "silenced": [],
+    "params": {
+      "n_trials": 30,
+      "t_run_ms": 1000.0,
+      "seed": 0
+    }
+  },
+  "result": {
+    "stimuli": [
+      {
+        "selector": {
+          "kind": "group",
+          "group": "sugar"
+        },
+        "label_tr": "Şekere duyarlı tat nöronları",
+        "flywire_ids": [
+          "720575940611875570",
+          "720575940612670570",
+          "720575940616885538",
+          "720575940617000768",
+          "720575940617937543",
+          "720575940621502051",
+          "720575940621754367",
+          "720575940624963786",
+          "720575940628853239",
+          "720575940629176663",
+          "720575940630233916",
+          "720575940630797113",
+          "720575940632425919",
+          "720575940632889389",
+          "720575940633143833",
+          "720575940637568838",
+          "720575940638202345",
+          "720575940639198653",
+          "720575940639259967",
+          "720575940639332736",
+          "720575940640649691"
+        ],
+        "missing_ids": []
+      },
+      {
+        "selector": {
+          "kind": "group",
+          "group": "bitter"
+        },
+        "label_tr": "Acıya duyarlı tat nöronları",
+        "flywire_ids": [
+          "720575940602353632",
+          "720575940604027168",
+          "720575940610259370",
+          "720575940610481370",
+          "720575940610483162",
+          "720575940613061118",
+          "720575940614281266",
+          "720575940617094208",
+          "720575940619028208",
+          "720575940619072513",
+          "720575940619197093",
+          "720575940621008895",
+          "720575940621778381",
+          "720575940622298631",
+          "720575940626287336",
+          "720575940627578156",
+          "720575940627692048",
+          "720575940629146711",
+          "720575940630195909",
+          "720575940645743412",
+          "720575940646212996"
+        ],
+        "missing_ids": []
+      }
+    ],
+    "stimulus_rates_hz": [
+      200.0,
+      200.0
+    ],
+    "silenced": [],
+    "silenced_neuron_count": 0,
+    "params": {
+      "n_trials": 30,
+      "t_run_ms": 1000.0,
+      "seed": 0
+    },
+    "control": {
+      "label_tr": "kontrol",
+      "output": {
+        "stimulus": {
+          "components": [
+            {
+              "group": "lab:0",
+              "name_tr": "Şekere duyarlı tat nöronları",
+              "intensity": 1.0,
+              "rate_hz": 200.0,
+              "neuron_count": 21
+            },
+            {
+              "group": "lab:1",
+              "name_tr": "Acıya duyarlı tat nöronları",
+              "intensity": 1.0,
+              "rate_hz": 200.0,
+              "neuron_count": 21
+            }
+          ],
+          "match_score": null,
+          "scenario_key": "lab:Şekere duyarlı tat nöronları@200Hz+Acıya duyarlı tat nöronları@200Hz"
+        },
+        "behaviors": [
+          {
+            "behavior": "feeding",
+            "readout_group": "mn9",
+            "rate_hz": 10.033333333333333,
+            "rate_std_hz": 2.243261514452165,
+            "score": 0.10784665033266445,
+            "active": true
+          },
+          {
+            "behavior": "escape",
+            "readout_group": "giant_fiber",
+            "rate_hz": 0.0,
+            "rate_std_hz": 0.0,
+            "score": 0.0,
+            "active": false
+          },
+          {
+            "behavior": "antennal_grooming",
+            "readout_group": "adn1",
+            "rate_hz": 0.0,
+            "rate_std_hz": 0.0,
+            "score": 0.0,
+            "active": false
+          },
+          {
+            "behavior": "backward_walking",
+            "readout_group": "mdn",
+            "rate_hz": 0.0,
+            "rate_std_hz": 0.0,
+            "score": 0.0,
+            "active": false
+          },
+          {
+            "behavior": "forward_walking",
+            "readout_group": "p9",
+            "rate_hz": 0.0,
+            "rate_std_hz": 0.0,
+            "score": null,
+            "active": false
+          }
+        ],
+        "circuit_only": false,
+        "top_neuropils": [
+          {
+            "neuropil": "GNG",
+            "events_hz": 31978815.333333336,
+            "share": 0.7797884399320157
+          },
+          {
+            "neuropil": "PRW",
+            "events_hz": 4498232.000000001,
+            "share": 0.1096872813195187
+          },
+          {
+            "neuropil": "FLA_L",
+            "events_hz": 692862.6999999997,
+            "share": 0.01689513255223413
+          },
+          {
+            "neuropil": "SAD",
+            "events_hz": 560409.5333333332,
+            "share": 0.013665324095527643
+          },
+          {
+            "neuropil": "SLP_L",
+            "events_hz": 534177.2666666667,
+            "share": 0.013025662554389862
+          }
+        ],
+        "active_neuron_count": 447,
+        "model": {
+          "type": "LIF",
+          "dataset": "FlyWire v783",
+          "sign_source": "reference",
+          "mode": "live",
+          "n_trials": 30,
+          "t_run_ms": 1000.0,
+          "seed": 0,
+          "package_version": null
+        }
+      },
+      "neuropil_rates_hz": {
+        "AL_L": 0.019973927011224187,
+        "AL_R": 0.015040381625007496,
+        "AME_L": 0.0,
+        "AME_R": 0.0,
+        "AMMC_L": 0.000012875560506737276,
+        "AMMC_R": 0.00016659661844310652,
+        "AOTU_L": 0.00014849934660287494,
+        "AOTU_R": 0.00027284396147927124,
+        "ATL_L": 0.08454549630242064,
+        "ATL_R": 0.03348392351590101,
+        "AVLP_L": 0.017069066742622034,
+        "AVLP_R": 0.003973725738926665,
+        "BU_L": 0.0,
+        "BU_R": 0.0,
+        "CAN_L": 0.6328447170530548,
+        "CAN_R": 0.47739438949961394,
+        "CRE_L": 0.013131832131663293,
+        "CRE_R": 0.0015939758440235382,
+        "EB": 4.293616584809662e-6,
+        "EPA_L": 0.0012810069450729807,
+        "EPA_R": 0.02020487068352135,
+        "FB": 0.000029828068056280815,
+        "FLA_L": 1.920303262945214,
+        "FLA_R": 0.9939335681795488,
+        "GA_L": 0.0008550496511786082,
+        "GA_R": 0.028408191966247692,
+        "GNG": 4.538011129938989,
+        "GOR_L": 0.011780167158482497,
+        "GOR_R": 0.056957918450719014,
+        "IB_L": 0.1153122774037715,
+        "IB_R": 0.019710067500620446,
+        "ICL_L": 0.020360918263630914,
+        "ICL_R": 0.0017127287887698005,
+        "IPS_L": 0.005720609023580408,
+        "IPS_R": 0.056544298325659346,
+        "LAL_L": 0.05101601400677399,
+        "LAL_R": 0.05918961191495794,
+        "LA_L": 0.0,
+        "LA_R": 0.0,
+        "LH_L": 0.10187325333964112,
+        "LH_R": 0.010710754599708317,
+        "LOP_L": 0.0,
+        "LOP_R": 0.0,
+        "LO_L": 0.005479276023307703,
+        "LO_R": 0.006225282752314497,
+        "MB_CA_L": 0.012947343911119982,
+        "MB_CA_R": 0.011433959438658705,
+        "MB_ML_L": 0.0024977424170955723,
+        "MB_ML_R": 0.0013851566997650242,
+        "MB_PED_L": 0.14834287336355823,
+        "MB_PED_R": 0.0047263242439423946,
+        "MB_VL_L": 0.01126702504437658,
+        "MB_VL_R": 0.00002585827242498071,
+        "ME_L": 0.0,
+        "ME_R": 0.0,
+        "NO": 0.01334256316354912,
+        "OCG": 0.0,
+        "PB": 0.020079492230247315,
+        "PLP_L": 0.02183481351255556,
+        "PLP_R": 0.0074872229667806945,
+        "PRW": 4.281428998380033,
+        "PVLP_L": 0.031079764260558657,
+        "PVLP_R": 0.0019327866216433509,
+        "SAD": 0.42378472747364865,
+        "SCL_L": 0.306833359854072,
+        "SCL_R": 0.02716560730415239,
+        "SIP_L": 0.08953838213731144,
+        "SIP_R": 0.0037674022576850825,
+        "SLP_L": 0.2160361569271681,
+        "SLP_R": 0.017322177935268503,
+        "SMP_L": 0.04480839679628933,
+        "SMP_R": 0.006080710937975532,
+        "SPS_L": 0.014647961412899365,
+        "SPS_R": 0.08866293065264699,
+        "VES_L": 0.2267282623196406,
+        "VES_R": 0.3071257500861184,
+        "WED_L": 0.03605497319270364,
+        "WED_R": 0.07265182842779536
+      }
+    },
+    "silenced_condition": null,
+    "comparisons": [],
+    "warnings_tr": [],
+    "duration_seconds": 82.51
+  },
+  "provenance": {
+    "sinek_version": "0.1.0",
+    "dataset": "FlyWire v783",
+    "sign_source": "reference",
+    "sources_sha256": {
+      "Completeness_783.csv": "bbb847a4cc2caaa7a16349722d220c087317b946d148d4d592d94d250617a311",
+      "Connectivity_783.parquet": "efeb23fb99098e9c390f6869969b2a121a2ee92c833cfc45ecb2c1d8e1af0347",
+      "Supplemental_file1_neuron_annotations.tsv": "9a4f8b2f843196074431ebd7cd883536afa1be86c8a4ce90970441e8be81d1be",
+      "per_neuron_neuropil_count_pre_783.feather": "35442a46f076892dff91bd6e55fa1489b3acc64fda1d35cee7dbbbbc509a3dff"
+    },
+    "neuron_groups_definitions_sha256": "013d218c81256adb45504c7d30716abe9a9eb4b283f23f94862f48802190f685",
+    "calibration_sha256": "72173e3d1e8c67c9a75f8d72be4cb7c69348b760944768dde6d6fcca265a6a71",
+    "environment": {
+      "sinek": "0.1.0",
+      "python": "3.12.10",
+      "torch": "2.14.0+cu130",
+      "numpy": "2.5.3",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "device": "NVIDIA GeForce RTX 4060 Laptop GPU"
+    }
+  }
+}

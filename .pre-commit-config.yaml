@@ -1,0 +1,44 @@
+# Derlenmiş arayüz (npm run build çıktısı) biçimlendirilmez; CI güncelliğini ayrıca denetler.
+exclude: ^backend/sinek/web/
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+      - id: check-toml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+        exclude: \.md$
+      - id: check-added-large-files
+        args: ["--maxkb=1024"]
+        # 3B beyin geometrisi bilinçli üretilmiş bir varlıktır (sinek.schematic.build3d, SHA-256'lı).
+        exclude: ^(frontend/public|backend/sinek/web)/beyin-3b\.bin$
+      - id: detect-private-key
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff (lint)
+        entry: uv run ruff check --fix
+        language: system
+        types: [python]
+      - id: ruff-format
+        name: ruff (biçimlendirme)
+        entry: uv run ruff format
+        language: system
+        types: [python]
+      - id: mypy
+        name: mypy (tip denetimi)
+        entry: uv run mypy
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: env-example
+        name: .env.example anahtar sızıntısı denetimi
+        entry: uv run python scripts/check_env_example.py
+        language: system
+        files: ^\.env\.example$
+        pass_filenames: false

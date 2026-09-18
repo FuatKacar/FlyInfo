@@ -1,0 +1,21 @@
+name: Kaynakça doğrulama
+
+on:
+  push:
+    paths: ["docs/kaynakca.bib", "scripts/check_references.py"]
+  pull_request:
+    paths: ["docs/kaynakca.bib", "scripts/check_references.py"]
+  schedule:
+    - cron: "0 6 * * 1" # her pazartesi
+  workflow_dispatch:
+
+jobs:
+  doi:
+    name: DOI'leri Crossref ile doğrula
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/check_references.py

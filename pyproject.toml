@@ -1,0 +1,122 @@
+[project]
+name = "flyinfo"
+version = "0.1.0"
+description = "FlyInfo: meyve sineği (Drosophila) konektomu üzerinde Türkçe ve bilimsel olarak şeffaf tam beyin simülasyonu"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Fuat Kacar" }]
+keywords = ["drosophila", "connectome", "flywire", "neuroscience", "simulation", "LIF", "türkçe"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "Natural Language :: Turkish",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "fastapi>=0.115",
+    "google-genai>=2.24.0",
+    "numpy>=2.5.3",
+    "pandas>=3.0.5",
+    "pyarrow>=25.0.1",
+    "pydantic-settings>=2.6",
+    "scipy>=1.18.1",
+    "torch>=2.14",
+    "uvicorn[standard]>=0.32",
+]
+
+[project.urls]
+Homepage = "https://github.com/FuatKacar/FlyInfo"
+Repository = "https://github.com/FuatKacar/FlyInfo"
+Issues = "https://github.com/FuatKacar/FlyInfo/issues"
+
+[project.scripts]
+sinek = "sinek.cli:main"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28",
+    "mypy>=1.13",
+    "pandas-stubs>=3.0.5.260914",
+    "pre-commit>=4.0",
+    "pytest>=8.3",
+    "pytest-cov>=6.0",
+    "ruff>=0.8",
+    "scipy-stubs>=1.18.1.0",
+]
+
+validation = [
+    # Referans simülatör: PyTorch modelinin Shiu et al. (2024) Brian2 modeliyle denkliğini test etmek için
+    "brian2>=2.10",
+    "matplotlib>=3.11.2",
+]
+
+# --- PyTorch: Windows/Linux'ta CUDA 13.0, macOS'ta PyPI (CPU/MPS) ------------
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu130", marker = "sys_platform != 'darwin'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv]
+default-groups = ["dev", "validation"]
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["backend/sinek"]
+
+# --- Ruff ---------------------------------------------------------------------
+[tool.ruff]
+extend-exclude = ["backend/sinek/web"]
+line-length = 100
+target-version = "py312"
+src = ["backend"]
+
+[tool.ruff.lint]
+select = [
+    "E", "W",  # pycodestyle
+    "F",       # pyflakes
+    "I",       # isort
+    "B",       # bugbear
+    "UP",      # pyupgrade
+    "N",       # adlandırma
+    "SIM",     # sadeleştirme
+    "C4",      # comprehension
+    "PT",      # pytest stili
+    "RUF",     # ruff'a özgü
+]
+# Türkçe yorum ve metinlerdeki harfler "karıştırılabilir karakter" sayılmasın.
+allowed-confusables = ["ı", "İ", "ş", "Ş", "ğ", "Ğ", "ç", "Ç", "ö", "Ö", "ü", "Ü", "–", "×"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+# --- mypy ---------------------------------------------------------------------
+[tool.mypy]
+python_version = "3.12"
+strict = true
+mypy_path = "backend"
+packages = ["sinek"]
+plugins = ["pydantic.mypy"]
+
+# --- pytest -------------------------------------------------------------------
+[tool.pytest.ini_options]
+testpaths = ["backend/tests"]
+addopts = "-ra --strict-markers"
+markers = ["veri: gerçek FlyWire v783 verisi gerektirir (uv run sinek indir)"]
+filterwarnings = [
+    # Üçüncü parti kütüphanelerin kendi iç uyarıları (bizim kodumuzla ilgisiz)
+    "ignore::DeprecationWarning:brian2.*",
+    "ignore:.*parseAll.*:DeprecationWarning",
+    "ignore:Using `httpx` with `starlette.testclient`",
+    "ignore:The anyio.abc.BlockingPortal alias is deprecated:DeprecationWarning",
+]
