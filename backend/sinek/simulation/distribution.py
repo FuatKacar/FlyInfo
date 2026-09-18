@@ -32,7 +32,7 @@ SCENARIO_ARCHIVE = DataSource(
     key="scenarios",
     filename=ARCHIVE_NAME,
     url=f"https://github.com/FuatKacar/FlyInfo/releases/download/{RELEASE_TAG}/{ARCHIVE_NAME}",
-    sha256="0aca42a65259808089d19d0ea551c2c7dfef9ce248eca9bd1acb2aad8cef3950",
+    sha256="a2ef8a7effbf68846f17422dcb341c070432987651c5e9a8e473e95f7ee63976",
     size=7_765_209,
     description="Önceden hesaplanmış 225 senaryo (30 deneme × 1 sn, FlyWire v783)",
     license="CC-BY 4.0 (FlyWire verisinden türetilmiştir)",
@@ -63,6 +63,7 @@ def build_archive(directory: Path, output: Path) -> Path:
     with zipfile.ZipFile(partial, "w", compression=zipfile.ZIP_STORED) as archive:
         for path in _package_files(directory):
             info = zipfile.ZipInfo(path.name, date_time=_FIXED_TIME)
+            info.create_system = 3  # Unix; varsayılan işletim sistemine göre değişir (Windows'ta 0)
             info.external_attr = 0o644 << 16
             archive.writestr(info, path.read_bytes())
     partial.replace(output)

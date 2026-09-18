@@ -1,0 +1,120 @@
+{"text": "Sana biraz bal getirdim", "labels": {"sugar": 1}, "tags": ["tekil"]}
+{"text": "Önüne bir kaşık şeker koydum", "labels": {"sugar": 2}, "tags": ["tekil"]}
+{"text": "Bak burada kocaman bir kavanoz reçel var, hepsi senin", "labels": {"sugar": 3}, "tags": ["tekil"]}
+{"text": "Olgun bir muz dilimi bıraktım", "labels": {"sugar": 2}, "tags": ["tekil"]}
+{"text": "Portakal suyundan bir damla akıttım", "labels": {"sugar": 1}, "tags": ["tekil"]}
+{"text": "Tatlı şurubu tabağa döktüm", "labels": {"sugar": 2}, "tags": ["tekil"]}
+{"text": "al sana cikolata", "labels": {"sugar": 2}, "tags": ["tekil", "yazim_hatasi"]}
+{"text": "Dondurmamdan biraz tattır bakalım sana", "labels": {"sugar": 1}, "tags": ["tekil", "argo"]}
+{"text": "Çiçek nektarını önüne koyuyorum", "labels": {"sugar": 2}, "tags": ["tekil"]}
+{"text": "Pastanın kremasından bol bol ayırdım sana", "labels": {"sugar": 3}, "tags": ["tekil"]}
+{"text": "şekerli çay döktüm masaya", "labels": {"sugar": 2}, "tags": ["tekil"]}
+{"text": "Kekten minicik bir kırıntı", "labels": {"sugar": 1}, "tags": ["tekil"]}
+{"text": "Önüne acı bir şey koydum", "labels": {"bitter": 2}, "tags": ["tekil"]}
+{"text": "Biraz böcek ilacı sıktım", "labels": {"bitter": 1}, "tags": ["tekil"]}
+{"text": "Bu damlada kafein var, tadına bak", "labels": {"bitter": 2}, "tags": ["tekil"]}
+{"text": "Yemeğine bolca zehir kattım", "labels": {"bitter": 3}, "tags": ["tekil"]}
+{"text": "Kinin çözeltisi koydum önüne", "labels": {"bitter": 2}, "tags": ["tekil"]}
+{"text": "tadı berbat acı bi sıvı bu", "labels": {"bitter": 2}, "tags": ["tekil", "argo"]}
+{"text": "Acı otun suyunu sıktım biraz", "labels": {"bitter": 1}, "tags": ["tekil"]}
+{"text": "Her yere zehirli yem serptim", "labels": {"bitter": 3}, "tags": ["tekil"]}
+{"text": "Sert bir kahve damlası bıraktım, çok acı", "labels": {"bitter": 3}, "tags": ["tekil"]}
+{"text": "zeher koydum yemeğine", "labels": {"bitter": 2}, "tags": ["tekil", "yazim_hatasi"]}
+{"text": "Acımtırak bir yaprak parçası", "labels": {"bitter": 1}, "tags": ["tekil"]}
+{"text": "Bu şişedeki sıvı çok acı, bir yudum dök", "labels": {"bitter": 3}, "tags": ["tekil"]}
+{"text": "Sana bir damla su verdim", "labels": {"water": 1}, "tags": ["tekil"]}
+{"text": "Önüne bir kapak su koydum", "labels": {"water": 2}, "tags": ["tekil"]}
+{"text": "Islak bir pamuk bıraktım", "labels": {"water": 2}, "tags": ["tekil"]}
+{"text": "Koca bir su birikintisi var tam önünde", "labels": {"water": 3}, "tags": ["tekil"]}
+{"text": "suu içmek ister misin diye bi damla koydum", "labels": {"water": 1}, "tags": ["tekil", "yazim_hatasi"]}
+{"text": "Yağmur damlası üstüne düştü", "labels": {"water": 2}, "tags": ["tekil"]}
+{"text": "Musluktan birkaç damla akıttım yanına", "labels": {"water": 1}, "tags": ["tekil"]}
+{"text": "Tabağı ağzına kadar suyla doldurdum", "labels": {"water": 3}, "tags": ["tekil"]}
+{"text": "Temiz su getirdim", "labels": {"water": 2}, "tags": ["tekil"]}
+{"text": "Sulu bir sünger koydum", "labels": {"water": 2}, "tags": ["tekil"]}
+{"text": "şişeden azcık su damlattım", "labels": {"water": 1}, "tags": ["tekil"]}
+{"text": "Bir kova suyu yanına boşalttım", "labels": {"water": 3}, "tags": ["tekil"]}
+{"text": "Antenine hafifçe dokundum", "labels": {"johnston_organ": 1}, "tags": ["tekil"]}
+{"text": "Antenlerine üfledim", "labels": {"johnston_organ": 2}, "tags": ["tekil"]}
+{"text": "Vantilatörü tam sana çevirdim, çok sert esiyor", "labels": {"johnston_organ": 3}, "tags": ["tekil"]}
+{"text": "Antenlerinde toz var", "labels": {"johnston_organ": 2}, "tags": ["tekil"]}
+{"text": "Bir tüyle antenlerini gıdıkladım", "labels": {"johnston_organ": 2}, "tags": ["tekil"]}
+{"text": "Hafif bir esinti geldi", "labels": {"johnston_organ": 1}, "tags": ["tekil"]}
+{"text": "antenlerini parmağımla dürttüm", "labels": {"johnston_organ": 2}, "tags": ["tekil", "argo"]}
+{"text": "Pencereyi açtım, içeri kuvvetli rüzgar doldu", "labels": {"johnston_organ": 3}, "tags": ["tekil"]}
+{"text": "Antenlerini tozla kapladım", "labels": {"johnston_organ": 3}, "tags": ["tekil"]}
+{"text": "Saç kurutma makinesini üstüne tuttum", "labels": {"johnston_organ": 3}, "tags": ["tekil"]}
+{"text": "Antenin hafifçe sallandı", "labels": {"johnston_organ": 1}, "tags": ["tekil"]}
+{"text": "Anteninin ucuna minik bir polen konmuş", "labels": {"johnston_organ": 1}, "tags": ["tekil"]}
+{"text": "Elimi sana doğru yaklaştırıyorum", "labels": {"looming": 2}, "tags": ["tekil"]}
+{"text": "Sineklikle üstüne geliyorum", "labels": {"looming": 3}, "tags": ["tekil"]}
+{"text": "Terliği kaptım, hızla sana doğru savurdum", "labels": {"looming": 3}, "tags": ["tekil"]}
+{"text": "Üstüne büyük bir gölge düştü", "labels": {"looming": 2}, "tags": ["tekil"]}
+{"text": "Bir kuş sana doğru dalıyor", "labels": {"looming": 3}, "tags": ["tekil"]}
+{"text": "Yavaşça elimi yaklaştırdım", "labels": {"looming": 1}, "tags": ["tekil"]}
+{"text": "gazeteyle seni ezicem", "labels": {"looming": 3}, "tags": ["tekil", "argo"]}
+{"text": "Bir top sana doğru yuvarlanıp geliyor", "labels": {"looming": 2}, "tags": ["tekil"]}
+{"text": "Kavanozun kapağını üstüne kapatmak için indiriyorum", "labels": {"looming": 2}, "tags": ["tekil"]}
+{"text": "El çırparak üstüne atıldım", "labels": {"looming": 3}, "tags": ["tekil"]}
+{"text": "Parmağım yavaş yavaş yaklaşıyor", "labels": {"looming": 1}, "tags": ["tekil"]}
+{"text": "Arkandan kocaman bir örümcek geliyor", "labels": {"looming": 2}, "tags": ["tekil"]}
+{"text": "Burada küf kokusu var", "labels": {"geosmin": 2}, "tags": ["tekil"]}
+{"text": "Çürümüş bir meyvenin kokusu yayıldı", "labels": {"geosmin": 2}, "tags": ["tekil"]}
+{"text": "Toprak kokan ıslak bir yaprak koydum", "labels": {"geosmin": 2}, "tags": ["tekil"]}
+{"text": "Oda iğrenç kokuyor, her yer küflenmiş", "labels": {"geosmin": 3}, "tags": ["tekil"]}
+{"text": "Hafif bir rutubet kokusu geliyor", "labels": {"geosmin": 1}, "tags": ["tekil"]}
+{"text": "Bozulmuş ekmeği yanına koydum, leş gibi kokuyor", "labels": {"geosmin": 3}, "tags": ["tekil", "argo"]}
+{"text": "Küflü peynir kokusu", "labels": {"geosmin": 2}, "tags": ["tekil"]}
+{"text": "bodrum gibi kokuyor burası", "labels": {"geosmin": 2}, "tags": ["tekil"]}
+{"text": "Biraz toprak kokusu var", "labels": {"geosmin": 1}, "tags": ["tekil"]}
+{"text": "Çöp kutusunun o pis kokusu", "labels": {"geosmin": 2}, "tags": ["tekil"]}
+{"text": "Kokuşmuş bir havuç parçası bıraktım", "labels": {"geosmin": 2}, "tags": ["tekil"]}
+{"text": "Mantar gibi kufli bi koku var", "labels": {"geosmin": 2}, "tags": ["tekil", "yazim_hatasi"]}
+{"text": "Sana doğru nefesimi verdim", "labels": {"co2": 2}, "tags": ["tekil"]}
+{"text": "Karbondioksit tüpünü biraz açtım", "labels": {"co2": 1}, "tags": ["tekil"]}
+{"text": "Egzoz dumanı yayılıyor", "labels": {"co2": 2}, "tags": ["tekil"]}
+{"text": "Sodanın kapağını açtım, gaz fışkırdı", "labels": {"co2": 3}, "tags": ["tekil"]}
+{"text": "Derin bir nefes alıp üstüne soludum", "labels": {"co2": 3}, "tags": ["tekil"]}
+{"text": "Nefesim yüzüne geliyor", "labels": {"co2": 2}, "tags": ["tekil"]}
+{"text": "Hafifçe soluk verdim", "labels": {"co2": 1}, "tags": ["tekil"]}
+{"text": "odaya co2 pompaladım", "labels": {"co2": 3}, "tags": ["tekil", "argo"]}
+{"text": "Maden suyunun gazı çıkıyor", "labels": {"co2": 2}, "tags": ["tekil"]}
+{"text": "Kuru buz buharlaşıp karbondioksit saldı", "labels": {"co2": 2}, "tags": ["tekil"]}
+{"text": "Ağzımı yaklaştırıp nefes verdim", "labels": {"co2": 2}, "tags": ["tekil"]}
+{"text": "Gazlı içeceğin köpüğünden biraz gaz çıkıyor", "labels": {"co2": 1}, "tags": ["tekil"]}
+{"text": "Bal ile acı bir sıvıyı karıştırıp önüne koydum", "labels": {"sugar": 2, "bitter": 2}, "tags": ["coklu"]}
+{"text": "Önünde su da var şerbet de", "labels": {"water": 2, "sugar": 2}, "tags": ["coklu"]}
+{"text": "Çürük meyve hem tatlı hem küf kokuyor", "labels": {"sugar": 2, "geosmin": 2}, "tags": ["coklu", "sinir"]}
+{"text": "Antenlerine nefesimle üfledim", "labels": {"johnston_organ": 2, "co2": 2}, "tags": ["coklu", "sinir"]}
+{"text": "Sineklikle üstüne gelirken rüzgar da esti", "labels": {"looming": 3, "johnston_organ": 2}, "tags": ["coklu"]}
+{"text": "Tatlıya biraz zehir kattım", "labels": {"sugar": 2, "bitter": 1}, "tags": ["coklu"]}
+{"text": "Küflü toprağın üstüne su döktüm", "labels": {"geosmin": 2, "water": 2}, "tags": ["coklu"]}
+{"text": "Elimi yaklaştırıp üstüne nefes verdim", "labels": {"looming": 2, "co2": 2}, "tags": ["coklu"]}
+{"text": "Şekerli suyu yanına döktüm", "labels": {"sugar": 2, "water": 2}, "tags": ["coklu", "sinir"]}
+{"text": "Bir damla bal, bir damla da acı kahve", "labels": {"sugar": 1, "bitter": 1}, "tags": ["coklu"]}
+{"text": "Egzoz gazı ve rüzgar birlikte geldi", "labels": {"co2": 2, "johnston_organ": 2}, "tags": ["coklu"]}
+{"text": "Kokuşmuş suyu önüne koydum", "labels": {"geosmin": 2, "water": 2}, "tags": ["coklu", "sinir"]}
+{"text": "Merhaba, nasılsın?", "labels": {}, "tags": ["kapsam_disi"]}
+{"text": "Adın ne senin?", "labels": {}, "tags": ["kapsam_disi", "soru"]}
+{"text": "2 artı 2 kaç eder?", "labels": {}, "tags": ["kapsam_disi", "soru"]}
+{"text": "Bugün hava çok güzel", "labels": {}, "tags": ["kapsam_disi"]}
+{"text": "Sana bal vermeyeceğim", "labels": {}, "tags": ["kapsam_disi", "olumsuz"]}
+{"text": "Antenine dokunmadım", "labels": {}, "tags": ["kapsam_disi", "olumsuz"]}
+{"text": "Hayat bazen çok acı", "labels": {}, "tags": ["kapsam_disi", "mecaz"]}
+{"text": "Çok tatlı bir sineksin", "labels": {}, "tags": ["kapsam_disi", "mecaz"]}
+{"text": "Bal mı seversin su mu?", "labels": {}, "tags": ["kapsam_disi", "soru"]}
+{"text": "Yarın sana şeker getireceğim", "labels": {}, "tags": ["kapsam_disi", "sinir"]}
+{"text": "Sana bir şarkı söyleyeyim", "labels": {}, "tags": ["kapsam_disi", "sinir"]}
+{"text": "Işığı kapattım", "labels": {}, "tags": ["kapsam_disi", "sinir"]}
+{"text": "Oda çok sıcak oldu", "labels": {}, "tags": ["kapsam_disi", "sinir"]}
+{"text": "Sana yemek getirdim", "labels": {}, "tags": ["kapsam_disi", "sinir"]}
+{"text": "Seni seviyorum küçük sinek", "labels": {}, "tags": ["kapsam_disi"]}
+{"text": "Arılar hakkında ne düşünüyorsun?", "labels": {}, "tags": ["kapsam_disi", "soru"]}
+{"text": "Güzel bir parfüm sıktım", "labels": {}, "tags": ["kapsam_disi", "sinir"]}
+{"text": "Başıma bela oldun", "labels": {}, "tags": ["kapsam_disi", "mecaz"]}
+{"text": "asdfgh", "labels": {}, "tags": ["kapsam_disi"]}
+{"text": "Kaç tane bacağın var?", "labels": {}, "tags": ["kapsam_disi", "soru"]}
+{"text": "Sineklik almayı unuttum", "labels": {}, "tags": ["kapsam_disi", "sinir"]}
+{"text": "Burada hiç küf kokusu yok", "labels": {}, "tags": ["kapsam_disi", "olumsuz"]}
+{"text": "Mavi bir kağıt gösteriyorum", "labels": {}, "tags": ["kapsam_disi", "sinir"]}
+{"text": "Nem çok yüksek bugün", "labels": {}, "tags": ["kapsam_disi", "sinir"]}

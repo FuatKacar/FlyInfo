@@ -20,9 +20,9 @@ htmlcov/
 !.env.example
 
 # Ham veri ve üretilen veri paketleri (Release üzerinden dağıtılır)
-data/
-artifacts/
-cache/
+/data/
+/artifacts/
+/cache/
 
 # Frontend
 node_modules/
